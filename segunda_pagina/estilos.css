@@ -1,0 +1,74 @@
+ol{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border:1px solid blue;
+}
+
+li{
+    margin: 7px !important;
+    padding: 10px !important;
+}
+
+ol.primernivel{
+  text-align: center;
+  list-style: none;  
+  margin: 0;
+  padding: 0;
+}
+
+ol.primernivel li{
+    display: block;
+    color: red;
+    float: left;
+}
+
+ul.segundonivel li {
+    display: block;
+    color: red;
+    float: left;
+}
+
+ul.tercernivel {
+    text-align: center;
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+}
+
+ul.tercernivel li{
+    text-align: center;
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+}
+
+ul.cuartonivel {
+    text-align: center;
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+}
+
+ul.cuartonivel li{
+    text-align: center;
+    list-style: none;  
+}
+
+ul.quintonivel {
+    text-align: center;
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+}
+
+ul.quintonivel li{
+    text-align: center;
+    list-style: none;  
+}
+
+ul li {
+    border:1px solid blue;  
+}

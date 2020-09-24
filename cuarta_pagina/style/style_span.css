@@ -1,0 +1,61 @@
+body{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, minmax(100px,1fr));
+    grid-template-rows: 50px 125px 125px 50px;
+}
+
+header{
+    grid-column: span 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted rgb(45, 9, 155);
+    background-color: rgb(107, 110, 174);
+}
+
+nav{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted rgb(67, 13, 114);
+    background-color: rgb(158, 105, 149);
+}
+
+article{
+    grid-column: span 4;
+    grid-row: span 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted green;
+    background-color: rgb(113, 150, 100);
+}
+
+aside{
+    grid-column-start: 7;
+    grid-row-start:2 ;
+    grid-row: span 4;
+    grid-column: span 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted rgb(245, 136, 154);
+    background-color: rgb(158, 115, 90);
+}
+
+footer{
+    grid-column-start: 1;
+    grid-column-end: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted red;
+    background-color: rgb(187, 119, 119);
+}

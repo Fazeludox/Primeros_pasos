@@ -1,0 +1,49 @@
+@font-face{
+    font-family: 'firasans-light';
+    src: url('fonts/FiraSans-Light.ttf') format('truetype');
+    font-weight: lighter;
+}
+
+@font-face{
+    font-family: 'firasans-normal';
+    src: url('fonts/FiraSans-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'firasans-semibold';
+    src: url('fonts/FiraSans-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+#servidor #externo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#servidor .light{
+    font-family: firasans-light, sans-serif;
+}
+
+#servidor .normal{
+    font-family: firasans-normal, sans-serif;
+}
+
+#servidor .bold{
+    font-family: firasans-semibold, sans-serif;
+}
+
+#externo .light{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+#externo .normal{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+#externo .bold{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}

@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>HTML/CSS Alumno</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap"
+    />
+    <link href="estilo_alumno.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="caja">
+      <header>
+        <h1>HTML/CSS y GRID/FLEX</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="alumno.html">ALUMNO</a></li>
+          <li>
+            <a href="https://www.w3schools.com/css/css3_mediaqueries.asp"
+              >CSS Media Queries</a
+            >
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp"
+              >CSS Propiedad de transformacion</a
+            >
+          </li>
+          <li><a href="https://fazeludox.github.io/Primeros_pasos/">Github Pages</a></li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <article class="cartas">
+          <div class="vertical">
+            <video width="400" controls buffered preload="auto">
+              <source src="video/MOOC.mp4" type="video/mp4" />
+              <source src="video/MOOC.mov" type="video/quicktime" />
+              <source src="video/MOOC.ogv" type="video/ogg" />
+              <source src="video/MOOC.webm" type="type/webm" />
+            </video>
+
+            <section class="descripcion">
+              <h1>Dron</h1>
+              <p class="cita">
+                Comprobando los distintos formatos y compatibilidad de
+                navegadores.
+              </p>
+            </section>
+          </div>
+          <div class="vertical">
+            <object data="https://www.typeform.com/" type="text/html"></object>
+            <section class="descripcion">
+              <h1>Typeform</h1>
+              <p class="cita">Plataforma online para crear encuestas.</p>
+              <a href="https://www.typeform.com/">>Visita Typeform</a>
+            </section>
+          </div>
+          <div class="vertical">
+            <iframe
+              width="350"
+              height="300"
+              src="https://www.youtube.com/embed/mU6anWqZJcc"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <section class="descripcion">
+              <h1>Learn HTML5 and CSS3 From Scratch - Full Course</h1>
+              <p class="cita">
+                FreeCodeCamp: Desarrollo web accesible a todas las personas
+              </p>
+              <a href="https://www.freecodecamp.org/learn/"
+                >>Visita FreeCodeCamp</a
+              >
+            </section>
+          </div>
+        </article>
+
+        <aside>
+          <ul>
+            <li>
+              <a href="#"> <img src="img/github.png" alt="GITHUB" /></a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/color_hunt_logo.png" alt="COLOR HUNT"
+              /></a>
+            </li>
+            <li>
+              <a href="#"> <img src="img/css_tricks.png" alt="HEX EDITOR" /></a>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </div>
+
+    <footer>&copy; Rodolfo Jofiel Cruzado Mariño</footer>
+  </body>
+</html>

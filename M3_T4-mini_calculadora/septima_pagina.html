@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Calculadora</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <script type="text/javascript">
+
+        let a = "";
+    
+        const suma = () => {
+            a = document.getElementById("calc").value;
+            a = a.trim();
+            let n = a.split("+");
+            let valor=0;
+            let l = n.length-1;
+
+            for(let i=0; i<=l;i++){           
+                valor += +n[i];
+            }        
+            
+            document.getElementById("resultado").innerHTML = valor;
+            console.log(n + " | " + valor);
+
+        }
+
+        const resta = () => {
+
+            a = document.getElementById("calc").value;
+            a = a.trim();
+            let n = a.split("-");
+            let valor=+n[0];
+            let l = n.length-1;
+
+            for(let i=1; i<=l;i++){           
+                valor -= +n[i];
+
+                console.log(valor);
+            }        
+            
+            document.getElementById("resultado").innerHTML = valor;
+        }
+
+        const mult = () => {
+            a = document.getElementById("calc").value;
+
+            a.trim();
+            
+            let n = a.split("*");
+
+            let valor = +n[0]
+            let l = n.length-1;
+            for(let i = 1; i <= l; i++){
+                valor *=n[i];
+            }
+
+            document.getElementById("resultado").innerHTML = valor;
+            
+        }
+
+        const cubo = () => {
+
+            a = document.getElementById("calc").value;
+            let x = +a;
+
+            x = x*x*x;
+
+            document.getElementById("resultado").innerHTML = x;
+        }
+
+        const cuadrado = () => {
+            a = document.getElementById("calc").value;
+            let x = +a;
+
+            x *= x;
+
+            document.getElementById("resultado").innerHTML = x;
+
+        }
+
+        const $_e = () => {
+            a = document.getElementById("calc").value;
+
+            a = a.trim();
+            
+            let x = +a;
+
+            switch(x){
+                case 0: 
+                document.getElementById("resultado").innerHTML= "El valor no puede ser 0.";
+                break;
+                default:
+                    x = (1/x);
+                    document.getElementById("resultado").innerHTML= "1/"+a+"="+x ;
+            }
+            
+        }
+
+    
+    </script>
+
+<div class="web">
+    <header>
+        <h1>Mini-Calculadora</h1>
+    </header>
+
+   <div class="main">    
+        <section class="calculadora">
+            <p id="resultado">RESULTADO</p>
+            <input type="text" name="numeros" id="calc" placeholder="Escribe una operacion">
+            <button id="suma" onclick="suma()">+</button>
+            <button id="resta" onclick="resta()">-</button>
+            <button id="multiplicar" onclick="mult()">*</button>
+            <button id="cubo" onclick="cubo()">x<sup>3</sup></button>
+            <button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+            <button id="e" onclick="$_e()">1/x</button>
+        </section>
+    </div>
+</div>
+
+<footer>
+   <p>&copy Rodolfo Jofiel</p>
+</footer>
+
+    
+</body>
+</html>

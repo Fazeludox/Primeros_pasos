@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header, footer{
+    text-align: center;
+    background: linear-gradient(45deg, rgb(150,150,50), rgb(100,200,50));
+    height: 50px;
+    vertical-align: middle;
+    box-shadow: 1px 2px 5px black;
+    padding: 10px;
+}
+
+.main{
+    background-color: rgba(73, 67, 67, 0.683);
+    padding: 25px;
+    height: 100%;   
+}
+
+h1{
+    padding: 5px;
+}
+
+p{
+    padding: 20px;
+}
+
+.calculadora{
+    background-color:rgba(100, 83, 83, 0.58);
+    height: calc(85vh);
+    border-radius: 25px;
+    display: grid;
+    padding:20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "t t sol sol"
+    "s s r r"
+    "x x e e"
+    "x2 x2 x3 x3";
+    gap: 5px;
+    
+}
+
+#calc{
+    grid-area: t;
+    text-align: center;
+    margin: 10px;
+    border: 2px dash red;
+    border-radius: 5px;
+    justify-items: center;
+    font-size: 30px;
+}
+
+#resultado{
+    grid-area: sol;
+    text-align: center;
+    color: rgb(236, 214, 115);
+    background-color: indianred;
+    font-size: 30px;
+    padding: 5px; 
+    margin: auto;
+    border-radius: 10px;
+    justify-self: center;
+    
+}
+
+#resultado:hover{
+    transform: scale(1.2);
+    transition: all 0.7s;
+}
+
+#suma{
+    grid-area: s;
+}
+
+#resta{
+    grid-area: r;
+}
+
+#multiplicar{
+    grid-area: x;
+}
+
+#e{
+    grid-area: e;
+}
+
+#cuadrado{
+    grid-area: x2;
+}
+
+#cubo{
+    grid-area: x3;
+}
+
+button{
+    border: 2px solid rgb(48, 97, 146);
+    padding: 5px;
+    border-radius:5px;
+    min-height: 80px;
+    max-height: 150px;
+    margin: 10px;
+    box-shadow: 1px 2px 10px black;
+    font-size: 25px;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color: rgba(167, 209, 253, 0.649);
+    border-radius: 5px;
+}

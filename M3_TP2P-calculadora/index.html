@@ -15,7 +15,7 @@
 
       const validar = (valor) => {
         if (isNaN(valor)) {
-          alert("Numero introducido de forma erronea");
+          alert("Solo se permiten los siguentes formatos: \n Números enteros positivos o negativos. \n Decimales usando el punto.\n Serie de números separados por la coma.");
           return false;
         } else {
           return true;
@@ -177,7 +177,7 @@
             if (dividendos != 0) {
               resultado %= dividendos;
             } else {
-              alert("NO PUEDES DIVIDIR POR 0");
+              alert("NO ES POSIBLE LA DIVISION POR 0");
               num.value = "Error";
             }
           }

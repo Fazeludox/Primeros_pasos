@@ -1,0 +1,108 @@
+body {
+  margin: 0px;
+  text-align: center;
+  background-color: #556773;
+  color: #0d0d0d;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  min-height: 86vh;
+  height: 100%;
+  padding: 15px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+header {
+  background: #0d0d0d;
+  color: #bf0436;
+  margin: 0px;
+  box-shadow: 0px 2px 7px black;
+}
+
+header h1 {
+  padding: 20px;
+  margin: 0px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+input {
+  border: 2px solid #0d0d0d;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 3px;
+}
+
+hr {
+  margin: 15px auto;
+  color: #0d0d0d;
+  width: 70%;
+  min-width: 280px;
+  box-shadow: 0px 0px 2px #0d0d0d;
+}
+
+button {
+  font-size: 25px;
+  color: #556773;
+  background-color: #f2a74b;
+  border: 2px solid #0d0d0d;
+  border-radius: 15px;
+}
+
+button:hover {
+  color: #0d0d0d;
+  background: #bf0436;
+}
+
+div {
+  margin: 25px auto;
+  width: 70%;
+  min-width: 30%;
+}
+
+#botenes_unitarios {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+#botones_binarios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-rows: repeat(4, minmax(50px, 0.2fr));
+  gap: 10px;
+}
+
+#botones_csv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#dia {
+  margin: 15px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+footer {
+  background: #0d0d0d;
+  color: #bf0436;
+  margin: 0px;
+  padding: 10px;
+  box-shadow: 0px -2px 7px black;
+}
+
+footer p {
+  margin: 0px;
+  padding: 20px;
+}

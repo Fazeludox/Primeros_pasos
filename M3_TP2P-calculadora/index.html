@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript">
+      const vaciar = () => {
+        document.getElementById("pantalla").value = "";
+      };
+
+      const validar = (valor) => {
+        if (isNaN(valor)) {
+          alert("Numero introducido de forma erronea");
+          return false;
+        } else {
+          return true;
+        }
+      };
+
+      const cuadrado = () => {
+        let num = document.getElementById("pantalla");
+
+        if (validar(num.value)) {
+          num.value = num.value * num.value;
+          actualizar_info(+num.value);
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      const actualizar_info = (x) => {
+        let info_num = document.getElementById("info");
+
+        if (200 < x) {
+          info_num.innerHTML = "Info: El resultado es superior a 200";
+        } else {
+          if (x >= 100 && x <= 200) {
+            info_num.innerHTML = "Info: El resultado está entre 100 y 200";
+          } else {
+            info_num.innerHTML = "Info: El resultado es menor que 100";
+          }
+        }
+      };
+
+      const mod = () => {
+        let num = document.getElementById("pantalla");
+
+        let valor_absoluto = +num.value;
+
+        if (validar(valor_absoluto)) {
+          valor_absoluto > 0
+            ? (num.value = valor_absoluto)
+            : (num.value = valor_absoluto * -1);
+
+          actualizar_info(num.value);
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      const fact = () => {
+        let num = document.getElementById("pantalla");
+        let aux = 1;
+
+        if (validar(+num.value)) {
+          for (let i = 0; i < +num.value; i++) {
+            let x = 0;
+
+            x = +num.value - i;
+            aux *= x;
+          }
+          num.value = aux;
+
+          actualizar_info(aux);
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      /*Operaciones*/
+
+      let resultado = 0;
+      let operacion = "";
+
+      const add = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "suma";
+
+        let a = +num.value;
+
+        if (validar(a)) {
+          resultado += a;
+        } else {
+          num.value = "Error";
+          resultado = 0;
+        }
+      };
+
+      const sub = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "resta";
+
+        let a = +num.value;
+        if (validar(a)) {
+          if (resultado == 0) {
+            resultado += a;
+          } else {
+            resultado -= a;
+          }
+        } else {
+          num.value = "Error";
+          resultado = 0;
+        }
+      };
+
+      const mul = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "multiplicacion";
+        let a = +num.value;
+
+        if (validar(a)) {
+          if (resultado == 0) {
+            resultado = a;
+          } else {
+            resultado *= a;
+          }
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      const div = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "division";
+
+        if (validar(+num.value)) {
+          let divisor = +num.value;
+          let a;
+
+          switch (divisor) {
+            case 0:
+              if (resultado != 0) {
+                num.value = "Error";
+                resultado = 0;
+              } else {
+                num.value = 0;
+                resultado = 0;
+                a = null;
+              }
+              break;
+            default:
+              a = divisor;
+              if (resultado == 0) {
+                resultado = a;
+              } else {
+                resultado /= a;
+                num.value = resultado;
+              }
+          }
+        }
+      };
+
+      const resto_division = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "modulo";
+        let dividendos = +num.value;
+
+        if (validar(dividendos)) {
+          if (resultado == 0 && dividendos != 0) {
+            resultado = dividendos;
+          } else {
+            if (dividendos != 0) {
+              resultado %= dividendos;
+            } else {
+              alert("NO PUEDES DIVIDIR POR 0");
+              num.value = "Error";
+            }
+          }
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      /*Variable para potencias*/
+
+      let base;
+      let potencia;
+      let i = 0;
+
+      const pot = () => {
+        let num = document.getElementById("pantalla");
+        operacion = "potencia";
+
+        if (validar(num.value) && base == null) {
+          base = +num.value;
+        }
+
+        if (potencia == null) {
+          potencia = +prompt("¿Cual va a ser el exponente?");
+        }
+
+        if (validar(potencia)) {
+          i == 0 ? (i = 2) : (resultado = base);
+
+          switch (potencia) {
+            case 0:
+              resultado = 1;
+              document.getElementById("info").innerHTML =
+                "<p>La operacion a realizar es " +
+                num.value +
+                "<sup>" +
+                potencia +
+                "</sup></p>";
+              break;
+            case 1:
+              resultado = +num.value;
+              document.getElementById("info").innerHTML =
+                "<p>La operacion a realizar es " +
+                num.value +
+                "<sup>" +
+                potencia +
+                "</sup></p>";
+              break;
+            default:
+              for (i; i <= potencia; i++) {
+                base *= +num.value;
+              }
+              document.getElementById("info").innerHTML =
+                "<p>La operacion a realizar es " +
+                num.value +
+                "<sup>" +
+                potencia +
+                "</sup></p>";
+          }
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      const eq = () => {
+        let num = document.getElementById("pantalla");
+
+        if (!validar(num.value)) {
+          operacion = "";
+          resultado = 0;
+        }
+
+        switch (operacion) {
+          case "resta":
+            sub();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            break;
+          case "suma":
+            add();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            break;
+          case "multiplicacion":
+            mul();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            break;
+          case "division":
+            div();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            break;
+          case "modulo":
+            resto_division();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            break;
+          case "potencia":
+            pot();
+            actualizar_info(resultado);
+            num.value = resultado;
+            resultado = 0;
+            i = 0;
+            base = null;
+            potencia = null;
+            break;
+          default:
+            num.value = "Error";
+            resultado = 0;
+        }
+      };
+
+      /*Operacions CVS*/
+
+      const sumatorio = () => {
+        let num = document.getElementById("pantalla");
+
+        let suma = num.value.split(",");
+        let a = 0;
+        for (let x of suma) {
+          a += +x;
+        }
+
+        if (validar(a)) {
+          num.value = a;
+        } else {
+          num.value = "Error";
+        }
+      };
+
+      const ordenar = () => {
+        let num = document.getElementById("pantalla");
+
+        let orden = num.value.split(",");
+        let i = 0;
+
+        for (i; i <= orden.length - 1; i++) {
+          if (validar(orden[i]) && num.value != "Error") {
+            orden[i] = +orden[i];
+          } else {
+            num.value = "Error";
+            i = orden.length;
+          }
+        }
+
+        if (i == orden.length) {
+          orden = orden.sort(function (a, b) {
+            return a - b;
+          }); //Devuelve ordenado en funcion del UNICODE, la funcion los ordena de forma ascendente.
+          num.value = orden;
+        }
+      };
+
+      const revertir = () => {
+        let num = document.getElementById("pantalla");
+
+        let orden = num.value.split(",");
+        let i = 0;
+
+        /*Compruebo todos los valores del array y luego procedo a ordenadorlos de forma inversa.*/
+        for (i; i <= orden.length - 1; i++) {
+          if (validar(orden[i]) && num.value != "Error") {
+            orden[i] = +orden[i];
+          } else {
+            num.value = "Error";
+            i = orden.length;
+          }
+        }
+
+        if (i == orden.length) {
+          orden = orden.reverse();
+          num.value = orden;
+        }
+      };
+
+      const quitar = () => {
+        let num = document.getElementById("pantalla");
+        let quitar = num.value.split(",");
+
+        let i = 0;
+
+        for (i; i <= quitar.length - 1; i++) {
+          if (validar(quitar[i]) && num.value != "Error") {
+            quitar[i] = +quitar[i];
+          } else {
+            num.value = "Error";
+            i = quitar.length;
+          }
+        }
+
+        if (i == quitar.length) {
+          quitar.pop();
+          num.value = quitar;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Calculadora</h1>
+    </header>
+
+    <section class="main">
+      <div class="texto_entrada">
+        <label for="pantalla">Número:</label>
+        <input type="text" id="pantalla" onclick="vaciar()" />
+        <hr />
+        <h2 id="info" class="grande" title="Info sobre el número">
+          Info sobre el número
+        </h2>
+      </div>
+
+      <div class="unitarias">
+        <h3>Operacion unitarias:</h3>
+        <div id="botenes_unitarios">
+          <button id="modulo" onclick="mod()">Módulo</button>
+          <button id="factorial" onclick="fact()">Factorial</button>
+        </div>
+      </div>
+
+      <div class="binarias">
+        <h3>Operaciones binarias:</h3>
+        <div id="botones_binarios">
+          <button id="suma" onclick="add()">+</button>
+          <button id="resta" onclick="sub()">-</button>
+          <button id="multiplicacion" onclick="mul()">*</button>
+          <button id="division" onclick="div()">/</button>
+          <button id="resto" onclick="resto_division()">%</button>
+          <button id="cuadrado" onclick="cuadrado()">x<sup>2</sup></button>
+          <button id="potencia" onclick="pot()">x<sup>n</sup></button>
+          <button id="igual" onclick="eq()">=</button>
+        </div>
+      </div>
+
+      <div class="csv">
+        <h3>Operaciones en formato CSV (Comma Separated Values)</h3>
+
+        <div id="botones_csv">
+          <button id="sumatorio" onclick="sumatorio()">Sumatorio</button>
+          <button id="ordenar" onclick="ordenar()">Ordenar</button>
+          <button id="revertir" onclick="revertir()">Invertir</button>
+          <button id="quitar" onclick="quitar()">Quitar</button>
+        </div>
+      </div>
+      <p id="dia"></p>
+
+      <script type="text/javascript">
+        /*Si lo coloco al inicio a la hora de cargar la pagina no va a encontrar el id dia.*/
+        let f = new Date();
+
+        let dia = document.getElementById("dia");
+
+        dia.innerHTML =
+          f.getDate() +
+          "/" +
+          (+f.getMonth() + 1) +
+          "/" +
+          f.getFullYear(); /*La funcion de mes es una array por lo que el mes es -1, hay que sumar +1 para que sea correcto.*/
+      </script>
+    </section>
+
+    <footer>
+      <p>&copy Rodolfo Jofiel Cruzado</p>
+    </footer>
+  </body>
+</html>

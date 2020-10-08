@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mis Películas</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        --primary: #322c59;
+        --secondary: #d991b3;
+        margin: 0px;
+      }
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      button {
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        text-decoration: none;
+        margin: 2px;
+        color: var(--primary);
+        background: white;
+        border: 1px solid var(--primary);
+        height: 20px;
+        font-size: 9px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: ease-in 0.2s all;
+        padding: 0 8px 0 8px;
+      }
+      div#main {
+        padding: 10px;
+      }
+      input,
+      textarea {
+        margin-bottom: 5px;
+        margin-top: 2px;
+        padding: 4px;
+        font-size: 13px;
+      }
+      h1 {
+        background: var(--primary);
+        color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin: 0px;
+        padding: 15px;
+      }
+      h2 {
+        margin-block-start: 0px;
+        margin-block-end: 10px;
+        font-size: 20px;
+        color: var(--primary);
+      }
+      button:hover {
+        background: var(--primary);
+        color: white;
+      }
+      div.actions {
+        margin-top: 10px;
+      }
+      div.movie {
+        display: inline-block;
+        width: auto;
+        padding: 10px;
+        box-shadow: 2px 2px 7px #ccc;
+        margin: 5px;
+      }
+      div.movie div.movie-img {
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+        cursor: pointer;
+      }
+      div.movie div.movie-img img {
+        width: 100%;
+        height: auto;
+      }
+      div.movie div.title {
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+        white-space: nowrap;
+      }
+      div.field {
+        color: var(--primary);
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      #sipnosis {
+        width: 250px;
+        height: 150px;
+      }
+
+      .img_info {
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+        padding: 5px;
+        border: 2px dotted var(--secondary);
+      }
+
+      .info_sipnosis {
+        border-top: 1px dotted #d94350;
+        border-bottom: 1px dotted #d94350;
+        padding: 10px;
+        font-family: monospace;
+      }
+    </style>
+
+    <script type="text/javascript">
+      // MODELO DE DATOS
+
+      let mis_peliculas_iniciales = [
+
+        /*Debido a moocauto la primera pelicula debe de ser Surpelopez o del director Javier Ruiz Caldera y no se deben superar 3 elementos base*/
+        {
+          titulo: "Superlópez",
+          director: "Javier Ruiz Caldera",
+          miniatura: "files/superlopez.png",
+          sipnosis:
+            "Desde su llegada a la Tierra procedente del planeta Chitón, la vida de Juan López no ha sido fácil. Con superpoderes es difícil no destacar. Poder volar, leer la mente, tener supervisión o detener un convoy del metro para que no descarrile… y regresar luego a la oficina, esforzándose en ser un tipo normal, no ha sido nada sencillo para él. O quizás sí, porque Juan no necesita más que su cruasán matinal para ser feliz… Sin embargo, algo está a punto de cambiar. La aparición en la ordenada vida de López de Luisa, un antiguo amor de instituto, va a causar estragos. Ya no es momento de pasar inadvertido. A pesar de que con ello pueda llamar la atención del malvado Skorba y de su sibilina hija, Ágata, y poner en peligro la supervivencia de su planeta de origen.",
+        },
+
+        {
+          titulo: "El viaje de Chihiro",
+          director: "Hayao Miyazaki",
+          miniatura: "files/chihiro.jpg",
+          sipnosis:
+            "Chihiro es una niña de diez años que viaja en coche con sus padres. Después de atravesar un túnel, llegan a un mundo fantástico, en el que no hay lugar para los seres humanos, sólo para los dioses de primera y segunda clase. Cuando descubre que sus padres han sido convertidos en cerdos, Chihiro se siente muy sola y asustada. ",
+        },
+        {
+          titulo: "Lolita",
+          director: "Stanley Kubrick",
+          miniatura: "files/lolita.jpg",
+          sipnosis:
+            "Humbert Humbert, un profesor cuarentón, llega a Ramsdale (New Hampshire) y alquila una habitación en casa de la viuda Charlotte Haze que tiene una hija de once años. Humbert se enamora perdidamente de la chiquilla y concibe un perverso plan: casarse con la madre para poder estar siempre cerca de la irresistible Lolita.",
+        },
+      ];
+
+      localStorage.mis_peliculas =
+        localStorage.mis_peliculas || JSON.stringify(mis_peliculas_iniciales);
+
+      // VISTAS
+      const indexView = (peliculas) => {
+        let i = 0;
+        let view = "";
+
+        while (i < peliculas.length) {
+          view += `
+                <div class="movie">
+                   <div class="movie-img">
+                        <img data-my-id="${i}" src="${
+            peliculas[i].miniatura
+          }" onerror="this.src='files/placeholder.png'"/>
+                   </div>
+                   <div class="title">
+                       ${peliculas[i].titulo || "<em>Sin título</em>"}
+                   </div>
+                   <div class="actions">
+                        <!--Insertar aquí botones de "Show" y "Delete"-->
+                       <button class="edit" data-my-id="${i}">editar</button>
+                       
+                       <button class="show" data-my-id="${i}">Informacion</button>
+                       <button class="delete" data-my-id="${i}">Borrar</button>
+                    </div>
+                </div>\n`;
+          i = i + 1;
+        }
+
+        view += `<div class="actions">
+                        <!--Insertar aquí botones de "Añadir" y "Reset"-->
+                        <button class="new">Agregar</button>
+                        <button class="reset">Resetear</button>
+                    </div>`;
+
+        return view;
+      };
+
+      const editView = (i, pelicula) => {
+        return `<h2>Editar Película </h2>
+                <div class="field">
+                Título <br>
+                <input  type="text" id="titulo" placeholder="Título" 
+                        value="${pelicula.titulo}">
+                </div>
+                <div class="field">
+                Director <br>
+                <input  type="text" id="director" placeholder="Director" 
+                        value="${pelicula.director}">
+                </div>
+                <div class="field">
+                Miniatura <br>
+                <input  type="text" id="miniatura" placeholder="URL de la miniatura" 
+                        value="${pelicula.miniatura}">
+                </div>
+
+                <div class="field">
+                    sipnosis <br>
+                    <textarea id="sipnosis" placeholder="sipnosis" 
+                        >${pelicula.sipnosis}</textarea>
+                </div> 
+
+                <div class="actions">
+                    <button class="update" data-my-id="${i}">
+                        Actualizar
+                    </button>
+                    <button class="index">
+                        Volver
+                    </button>
+               `;
+      };
+
+      const showView = (pelicula) => {
+        // Completar: genera HTML con información de la película
+        // ...
+
+        return `
+             <h1>${pelicula.titulo} -  ${pelicula.director}  </h1>
+             <img class="img_info" src="${pelicula.miniatura}"></img>
+             <p class="info_sipnosis"> 
+                ${pelicula.sipnosis}                          
+             </p>
+             <div class="actions">
+                <button class="index">Volver</button>
+             </div>`;
+      };
+
+      const newView = () => {
+        // Completar: genera formulario para crear nuevo quiz
+        // ...
+
+        return `<h2>Crear Película</h2>
+                    
+                    <div class="field">
+                        <label for="titulo">Pelicula:</label>
+                        <input id="titulo" class="titulo" type="text">    
+                    </div>
+
+                    <div class="field">
+                        <label for="director">Director:</label>
+                        <input id="director" class="director" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label for="nueva_miniatura">Miniatura:</label>
+                        <input id="miniatura" class="miniatura" type="text">
+                    </div>
+
+                    <div class="field">
+                        Sipnosis:<br>
+                        <textarea id="sipnosis" class="sipnosis"></textarea>
+                    </div>
+                    
+                <div class="actions">
+                    <button class="create">
+                        Agregar
+                    </button>
+                    <button class="index">
+                        Volver
+                    </button>
+                </div>`;
+      };
+
+      // CONTROLADORES
+      const indexContr = () => {
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+        document.getElementById("main").innerHTML = indexView(mis_peliculas);
+      };
+
+      const showContr = (i) => {
+        // Completar: controlador que muestra la vista showView(pelicula)
+        // ...
+
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+
+        document.getElementById("main").innerHTML = showView(mis_peliculas[i]);
+      };
+
+      const newContr = () => {
+        // Completar: controlador que muestra la vista newView()
+        // ...
+
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+
+        document.getElementById("main").innerHTML = newView();
+      };
+
+      const createContr = () => {
+        // Completar: controlador que crea una película nueva en el modelo guardado en localStorage
+        // ...
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+
+        let n_pelicula = document.getElementById("titulo").value;
+        let n_director = document.getElementById("director").value;
+        let n_miniatura = document.getElementById("miniatura").value;
+        let n_sipnosis = document.getElementById("sipnosis").value;
+
+        let nuevo = {
+          titulo: n_pelicula,
+          director: n_director,
+          miniatura: n_miniatura,
+          sipnosis: n_sipnosis,
+        };
+
+        if (nuevo !== null) {
+          mis_peliculas.push(nuevo);
+        }
+
+        localStorage.mis_peliculas = JSON.stringify(mis_peliculas);
+
+        indexContr();
+      };
+
+      const editContr = (i) => {
+        let pelicula = JSON.parse(localStorage.mis_peliculas)[i];
+        document.getElementById("main").innerHTML = editView(i, pelicula);
+      };
+
+      const updateContr = (i) => {
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+        mis_peliculas[i].titulo = document.getElementById("titulo").value;
+        mis_peliculas[i].director = document.getElementById("director").value;
+        mis_peliculas[i].miniatura = document.getElementById("miniatura").value;
+        mis_peliculas[i].sipnosis = document.getElementById("sipnosis").value;
+        localStorage.mis_peliculas = JSON.stringify(mis_peliculas);
+        indexContr();
+      };
+
+      const deleteContr = (i) => {
+        // Completar:  controlador que actualiza el modelo borrando la película seleccionada
+        // Genera diálogo de confirmación: botón Aceptar devuelve true, Cancel false
+
+        let mis_peliculas = JSON.parse(localStorage.mis_peliculas);
+
+        
+
+        let prueba = confirm(`¿Desea eliminar ${mis_peliculas[i].titulo}?`);
+
+        if(prueba){
+          mis_peliculas.splice(i, 1);
+          localStorage.mis_peliculas = JSON.stringify(mis_peliculas);
+        }
+
+        indexContr();
+      };
+
+      const resetContr = () => {
+        // Completar:  controlador que reinicia el modelo guardado en localStorage con las películas originales
+        localStorage.mis_peliculas = JSON.stringify(mis_peliculas_iniciales);
+
+        indexContr();
+      };
+
+      // ROUTER de eventos
+      const matchEvent = (ev, sel) => ev.target.matches(sel);
+      const myId = (ev) => Number(ev.target.dataset.myId);
+
+      document.addEventListener("click", (ev) => {
+        if (matchEvent(ev, ".index")) indexContr();
+        else if (matchEvent(ev, ".edit")) editContr(myId(ev));
+        else if (matchEvent(ev, ".update")) updateContr(myId(ev));
+        // Completar añadiendo los controladores que faltan
+        //Crear nuevos elementos
+        else if (matchEvent(ev, ".new")) newContr();
+        else if (matchEvent(ev, ".create")) createContr();
+        //Eliminar elementos
+        else if (matchEvent(ev, ".delete")) deleteContr(myId(ev));
+        //Informacion de la pelicula
+        else if (matchEvent(ev, ".show")) showContr(myId(ev));
+        //Reiniciar datos
+        else if (matchEvent(ev, ".reset")) resetContr();
+      });
+
+      // Inicialización
+      document.addEventListener("DOMContentLoaded", indexContr);
+    </script>
+  </head>
+
+  <body>
+    <h1>Mis Películas Favoritas</h1>
+    <div id="main"><!-- La vista se incluye aquí --></div>
+  </body>
+</html>

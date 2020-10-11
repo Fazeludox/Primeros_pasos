@@ -1,0 +1,131 @@
+html {
+  overflow: hidden;
+}
+
+.Opponent {
+	animation: rotation 3s infinite ease-in;
+	-webkit-animation: rotation 3s infinite ease-in;
+}
+
+.paused .Opponent {
+	animation: none;
+	-webkit-animation: none;
+}
+
+.paused .Boss{
+	animation: none;
+	-webkit-animation: none;
+}
+
+@-webkit-keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	20% {
+		transform: rotate(25deg);
+		-webkit-transform: rotate(25deg);
+	}
+	70%{
+		transform: rotate(-25deg);
+		-webkit-transform: rotate(-25deg);
+	}
+
+	100%{
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+.Boss{
+	animation: size 2s infinite ease-in;
+	-webkit-animation: size 2s infinite ease-in;
+}
+
+@-webkit-keyframes size {
+	0%{
+		transform: scale(1) rotate(0deg);
+	}
+	40%{
+		transform: scale(1.10) rotate(-3deg);
+	}
+
+	80%{
+		transform: scale(1.2) rotate(3deg);
+	}
+	100%{
+		transform: scale(1) rotate(0deg);
+		
+	}
+}
+
+
+.gamebutton {
+	border: none;
+	background: #83A638;
+	color: #011526;
+	padding: 10px 20px;
+	outline: none;
+	font-family: monospace;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin:5px;
+	box-shadow:  0px 1px 3px black;
+	
+}
+
+.gamebutton:hover{
+	background-color: #F3EAC9;
+	transform: scale(1.05);
+	animation: colors 3s infinite ease-in-out;
+	transition: all 1.5s;
+}
+
+body{
+	background-color: #053959;
+}
+
+ul{
+	position: absolute;
+	left: auto;
+	top: 5px;
+	right: 0px;
+	list-style-type: none;
+	margin: 2px;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	animation: colors 3s infinite ease-in-out;
+	gap: 5px;
+}
+
+ul li {
+	border: 2px dashed #83A638;
+	padding: 10px;
+	margin: 5px;
+	background-color:  #F3EAC9;
+}
+
+@-webkit-keyframes colors{
+	0%{
+		color:#BF2633;
+	}
+
+	40%{
+		color:#053959;
+	}
+
+	80%{
+		color:#83A638;
+	}
+
+	100%{
+		color:#BF2633;
+	}
+}
+
+.Entity{
+	background-color: #bf263386;
+	padding: 15px;
+	box-shadow:  0px 1px 5px black;
+}

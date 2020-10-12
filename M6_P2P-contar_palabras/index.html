@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style/estilos.css" />
+    <script src="script.js" type="text/javascript"></script>
+    <script type="text/javascript" source="stopwords-es.json"></script>
+  </head>
+  <body>
+    <h1>Análisis de texto</h1>
+    <hr />
+    <div class="main">
+      <div class="areatexto">
+        <p>Introduzca un texto para analizarlo:</p>
+        <textarea rows="10" cols="50" id="text" name="text"></textarea>
+      </div>
+      <div class="controles">
+        <button class="count">Contar</button
+        ><!-- TODO-->
+        <button class="letter_index">Repeticiones de letras</button>
+        <button class="word_index">Repeticiones de palabras</button>
+        <button class="sentence_index">Repeticiones de frases</button>
+      </div>
+      <div class="busqueda">
+        <p>Buscar repeticiones que contienen:</p>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Escribe la letra, palabra, frase que quieras buscar"
+        />
+        <button class="search_letters">Buscar letras</button>
+        <button class="search_words">Buscar palabras</button>
+        <button class="search_sentences">Buscar frases</button>
+      </div>
+    </div>
+
+    <hr />
+    <pre id="view"></pre>
+  </body>
+</html>

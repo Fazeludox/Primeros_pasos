@@ -112,13 +112,13 @@ class Game {
             this.keyPressed = undefined;
         } else {
             switch (event.keyCode) {
-            case 37: // Flecha izquierda
+            case 65: case 37: // Flecha izquierda
                 this.keyPressed = KEY_LEFT;
                 break;
             case 32: // Barra espaciadora
                 this.keyPressed = KEY_SHOOT;
                 break;
-            case 39: // Flecha derecha
+            case 68: case 39: // Flecha derecha
                 this.keyPressed = KEY_RIGHT;
                 break;
             case 27: case 81: // Tecla ESC o Q

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mis mangas</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/estilos.css" />
+    <script src="ajax.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      // ROUTER de eventos
+      const matchEvent = (ev, sel) => ev.target.matches(sel);
+      const myId = (ev) => Number(ev.target.dataset.myId);
+
+      document.addEventListener("click", (ev) => {
+        //Mostrar pagina
+        if (matchEvent(ev, ".index")) indexContr();
+        //Editar
+        else if (matchEvent(ev, ".edit")) editContr(myId(ev));
+        //Actualizar
+        else if (matchEvent(ev, ".update")) updateContr(myId(ev));
+        //Informacion
+        else if (matchEvent(ev, ".show")) showContr(myId(ev));
+        //Eliminar
+        else if (matchEvent(ev, ".delete")) deleteContr(myId(ev));
+        //Agregar
+        else if (matchEvent(ev, ".new")) newContr();
+        //Crear
+        else if (matchEvent(ev, ".create")) createContr();
+        // Inicialización
+        else if (matchEvent(ev, ".reset")) resetContr(); 
+      });
+
+      //Carga de la pagina web
+      document.addEventListener("DOMContentLoaded", initContr);
+    </script>
+  </head>
+
+  <body>
+    <h1>Mis mangas Favoritos</h1>
+    <div id="main">Cargando...</div>
+  </body>
+</html>

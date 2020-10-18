@@ -1,0 +1,168 @@
+@import 'lib/reset';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$base: 0.5em;
+$line: 4px;
+
+body{
+    margin:0px;
+    font-family: Roboto;
+}
+.grid_container{
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
+
+        .picture{
+            grid-area: 1 / 1 / span 4 / span 1;
+        }
+
+    
+        .info{
+            grid-area: 1 / 2 / span 1 / span 1; 
+            margin: $base*4; 
+            h1{
+                font-size:$base*3;
+                text-align: left;
+            }
+            p{
+                font-size: $base*2;
+                line-height: $line*6;
+                text-align: left;
+                color: rgb(90, 90, 90);
+            }
+        }
+        
+        .ctas{
+            grid-area: 2 / 2 / span 1 / span 1;
+            align-self: center;
+        }
+
+
+        .menu{
+            grid-area: 4 / 2 / span 1 / span 1;
+            align-self: center;
+            margin: $base*2;
+    }
+
+    .overlay{
+        grid-area: 1 / 1 / -1 / -1;
+        z-index: 2;
+    }
+}
+
+.ctas{
+    display: grid;
+    grid-gap: $base*2.5;
+    grid-template-columns: repeat(2, 1fr);
+    margin: $base*4;
+}
+
+.button{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-weight: 600;
+    padding: $base $base*3;
+    border-radius: 5px;
+
+    &_primary{
+        background-color: pink;
+        color:white;
+        border: 2px solid pink;
+    }
+
+    &_secondary_outlined{
+        border: 2px solid pink;
+        background-color: transparent;
+        color: pink;
+    }
+
+    &_block_level {
+        display: block;
+    }
+}
+
+.picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECECEC;
+}
+
+.menu_items{
+    list-style-type: none;
+    display: grid;
+    grid-gap: $base*2;
+    padding:  $base*4;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    text-decoration: none;
+}
+
+
+.menu_item{
+    a{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        .menu_item_icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: $base;
+            background-color: rgb(221, 221, 221);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: gray;
+        }
+                
+        .menu_item_link{
+            text-decoration: underline;
+            color:gray;
+            font-size: $base*1.33;
+        }
+    } 
+}
+
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    background-color: rgba(black, 0.4);
+    backdrop-filter: blur(2px);
+    text-align: center;
+
+    &.over{
+        visibility: visible;
+    }
+
+    .overlay_contenedor{
+        background-color: rgb(225, 224, 224);
+        padding: $base*2;
+        border-radius: 10px;
+        width: auto;
+
+        .overlay_title{
+            font-size: $base*2.5;
+            font-weight: 500;
+            color: rgb(51, 51, 51);
+            margin: $base*2;
+        }
+
+        .overlay_ctas{
+            display: flex;
+            flex-direction: column;
+            .button{
+                margin: $base;
+            }
+        }
+    }
+}

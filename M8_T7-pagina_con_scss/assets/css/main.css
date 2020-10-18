@@ -1,0 +1,285 @@
+@font-face {
+  font-family: "CaviarDreams";
+  src: url("../fonts/CaviarDreams.ttf");
+}
+
+@font-face {
+  font-family: "CaviarDreams-Italic";
+  src: url("../fonts/CaviarDreams_Italic.ttf");
+}
+
+@font-face {
+  font-family: "CaviarDreams-Bold";
+  src: url("../fonts/CaviarDreams_Bold.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 200px;
+}
+
+caja {
+  background-color: #f2f2f2;
+}
+
+header {
+  font-family: "Oswald", sans-serif;
+  background-color: #7F6B6D;
+  padding: 10px;
+  text-align: center;
+  min-width: 200px;
+  color: #FFD6D9;
+  -webkit-box-shadow: 0 4px 10px #7F6B6D;
+          box-shadow: 0 4px 10px #7F6B6D;
+}
+
+footer {
+  padding: 15px;
+  color: #FFD6D9;
+  text-align: center;
+  background-color: #7F6B6D;
+  -webkit-box-shadow: 0px 0px 10px #7F6B6D;
+          box-shadow: 0px 0px 10px #7F6B6D;
+}
+
+nav {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 1rem;
+  color: #FFD6D9;
+  margin: 5px 15px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+nav ul li {
+  list-style: none;
+  width: 100%;
+  padding: 10px;
+  border: 0.5px solid #7F6B6D;
+  margin: 5px;
+  background-color: #FFD6D9;
+  -webkit-box-shadow: 0px 2px 5px #7F6B6D;
+          box-shadow: 0px 2px 5px #7F6B6D;
+}
+
+nav ul li:hover {
+  background-color: #FF8A93;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+@media screen and (min-width: 540px) and (max-width: 900px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+a:link {
+  color: #FF8A93;
+}
+
+a:visited {
+  color: #7F6B6D;
+}
+
+section {
+  padding: 10px;
+}
+
+object {
+  min-width: inherit;
+}
+
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(200px, 4.5fr) 1fr;
+      grid-template-columns: minmax(200px, 4.5fr) 1fr;
+  -ms-grid-rows: 5fr;
+      grid-template-rows: 5fr;
+  height: 100%;
+  gap: 10px;
+}
+
+.main .cartas {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0.5rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 20px;
+}
+
+.main .cartas .vertical {
+  background-color: #eff1ee;
+  -webkit-box-shadow: 3px 3px 10px #7F6B6D;
+          box-shadow: 3px 3px 10px #7F6B6D;
+  border-radius: 10px;
+  color: #7F6B6D;
+  min-width: 220px;
+  height: 100%;
+}
+
+.main .cartas .vertical video, .main .cartas .vertical object, .main .cartas .vertical iframe {
+  -webkit-transform: scale(0.85, 0.85);
+          transform: scale(0.85, 0.85);
+  width: 100%;
+  border: 4px double #afc9be;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #916468;
+  height: 80%;
+}
+
+.main .cartas .vertical video:hover, .main .cartas .vertical object:hover, .main .cartas .vertical iframe:hover {
+  -webkit-transform: scale(0.95, 0.95);
+          transform: scale(0.95, 0.95);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.main .cartas .vertical .descripcion h1 {
+  font-family: "CaviarDreams", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 3px double #FF8A93;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.main .cartas .vertical .descripcion p {
+  padding: 5px;
+  font-family: "CaviarDreams-Italic";
+}
+
+.main .cartas .vertical .descripcion a {
+  margin: 5px;
+  font-family: "CaviarDreams-Bold";
+}
+
+.main aside {
+  margin: 0.5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main aside ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main aside ul li {
+  padding: 20px;
+  border-top: 1px dashed #7F6B6D;
+  border-bottom: 1px dashed #7F6B6D;
+}
+
+.main aside ul li img {
+  width: 200px;
+  height: 115px;
+  -webkit-filter: blur(0.5px) grayscale(1);
+          filter: blur(0.5px) grayscale(1);
+  border-radius: 15px;
+  border: 1.5px solid black;
+}
+
+.main aside ul li img:hover {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media screen and (min-width: 540px) and (max-width: 900px) {
+  .main {
+    height: auto;
+    -ms-grid-columns: minmax(200px, 1fr);
+        grid-template-columns: minmax(200px, 1fr);
+    -ms-grid-rows: 3fr 25%;
+        grid-template-rows: 3fr 25%;
+  }
+  .main .cartas {
+    padding: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main .cartas .vertical {
+    min-width: 100%;
+    min-height: 400px;
+    height: auto;
+  }
+  .main .cartas .vertical video, .main .cartas .vertical object, .main .cartas .vertical iframe {
+    height: 350px;
+  }
+  .main aside ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main aside ul li {
+    border-top: 1px dashed #7F6B6D;
+  }
+  .main aside ul img {
+    width: 300px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main aside ul img {
+    width: 150px;
+    height: 100px;
+    min-width: 50px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

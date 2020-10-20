@@ -1,0 +1,410 @@
+html, body {
+  margin: 10px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+.main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#selector_1 .nav_container {
+  width: 350px;
+}
+
+#selector_1 .nav_container nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0;
+}
+
+#selector_1 .nav_container nav ul li {
+  padding: 1.5em 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#selector_1 .nav_container nav ul li.btn_dropmenu {
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: #d6c8d5;
+  -webkit-transition-property: border, background-color;
+  transition-property: border, background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .nav_container nav ul li.btn_dropmenu:hover {
+  background-color: #ffe4ff;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+#selector_1 .nav_container nav ul li svg.arrow {
+  width: 10px;
+  height: 10px;
+  padding: 0.25em 5px;
+  rotate: 0deg;
+  -webkit-transition: rotate;
+  transition: rotate;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .nav_container nav ul li svg.calendar {
+  width: 10px;
+  height: 10px;
+  padding: 0.25em 5px;
+}
+
+#selector_1 .nav_container nav ul li.focus {
+  border: 2px solid purple;
+  -webkit-box-shadow: 0px 0px 5px violet;
+          box-shadow: 0px 0px 5px violet;
+  -webkit-transition-property: border, -webkit-box-shadow;
+  transition-property: border, -webkit-box-shadow;
+  transition-property: border, box-shadow;
+  transition-property: border, box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .nav_container nav ul li.focus svg.arrow {
+  rotate: -180deg;
+  -webkit-transition: rotate;
+  transition: rotate;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .dropmenu {
+  width: 350px;
+  height: 0;
+  margin-top: 3px;
+  translate: 0px -100px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: translate, opacity, visibility;
+  transition: translate, opacity, visibility;
+  -webkit-transition-duration: 450ms;
+          transition-duration: 450ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+#selector_1 .dropmenu.active {
+  translate: 0px 0px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: translate, opacity visibility;
+  transition: translate, opacity visibility;
+  -webkit-transition-duration: 450ms;
+          transition-duration: 450ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .dropmenu ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0 2px;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+  border-radius: 5px;
+}
+
+#selector_1 .dropmenu ul li {
+  border-bottom: 1px solid black;
+  padding: 1em;
+  color: black;
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_1 .dropmenu ul li:last-child {
+  border-bottom: none;
+}
+
+#selector_1 .dropmenu ul li:hover {
+  background-color: gray;
+}
+
+#selector_1 .dropmenu ul li.effect {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr {
+  width: 350px;
+}
+
+#selector_2 .nav_container_hvr nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu {
+  padding: 1.5em 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: #a6d1fc;
+  -webkit-transition-property: border, background-color;
+  transition-property: border, background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu:hover {
+  border: 2px solid #252aae;
+  -webkit-box-shadow: 0px 0px 5px #bbd3dd;
+          box-shadow: 0px 0px 5px #bbd3dd;
+  background-color: #9edaf3;
+  -webkit-transition-property: border, background-color;
+  transition-property: border, background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu svg.arrow {
+  width: 10px;
+  height: 10px;
+  padding: 0.25em 5px;
+  rotate: 0deg;
+  -webkit-transition: rotate;
+  transition: rotate;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu svg.calendar {
+  width: 25px;
+  height: 25px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu.focus {
+  border: 2px solid #4d38b3;
+  -webkit-box-shadow: 0px 0px 5px #82b8ee;
+          box-shadow: 0px 0px 5px #82b8ee;
+  -webkit-transition-property: border, -webkit-box-shadow;
+  transition-property: border, -webkit-box-shadow;
+  transition-property: border, box-shadow;
+  transition-property: border, box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-delay: 100;
+          transition-delay: 100;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu.focus svg.arrow {
+  rotate: -180deg;
+  -webkit-transition: rotate;
+  transition: rotate;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .nav_container_hvr nav ul .hvr_dropmenu.focus svg.calendar {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .dropmenu_hvr {
+  width: 350px;
+  height: 0;
+  margin-top: 3px;
+  translate: 0px +100px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: translate, opacity, visibility;
+  transition: translate, opacity, visibility;
+  -webkit-transition-duration: 450ms;
+          transition-duration: 450ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+#selector_2 .dropmenu_hvr.active {
+  translate: 0px 0px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: translate, opacity visibility;
+  transition: translate, opacity visibility;
+  -webkit-transition-duration: 450ms;
+          transition-duration: 450ms;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .dropmenu_hvr ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0 2px;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+  border-radius: 5px;
+}
+
+#selector_2 .dropmenu_hvr ul li {
+  border-bottom: 1px solid black;
+  padding: 1em;
+  color: black;
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+#selector_2 .dropmenu_hvr ul li:last-child {
+  border-bottom: none;
+}
+
+#selector_2 .dropmenu_hvr ul li:hover {
+  background-color: #a2a2a2;
+}
+
+#selector_2 .dropmenu_hvr ul li.effect {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+/*# sourceMappingURL=main.css.map */

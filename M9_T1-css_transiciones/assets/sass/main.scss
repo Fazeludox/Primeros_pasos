@@ -1,0 +1,321 @@
+html, body{
+   margin:10px;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.main{
+    height: 100vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#selector_1{
+    .nav_container{
+        width: 350px;
+        nav{
+            ul{
+                list-style: none;
+                margin:0px;
+                padding: 0;
+                li{
+                    padding: 1.5em 5px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    &.btn_dropmenu{
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                        background-color: rgb(214, 200, 213);
+                        transition-property: border, background-color;
+                        transition-duration: 500ms;
+                        transition-delay: 200ms;
+                        transition-timing-function: ease;
+    
+                        &:hover{
+                            background-color: rgb(255, 228, 255);
+                            transition-property: background-color;
+                            transition-duration: 500ms;
+                            transition-timing-function: ease;
+                            transition-delay: 0ms;                    
+                        }
+                    }
+    
+                    svg.arrow{
+                        width: 10px;
+                        height: 10px;
+                        padding: 0.25em 5px;
+                        rotate: 0deg;
+    
+    
+                        transition: rotate;
+                        transition-duration: 300ms;
+                        transition-delay: 100ms;
+                        transition-timing-function: ease;
+                    }
+    
+                    svg.calendar{
+                        width: 10px;
+                        height: 10px;
+                        padding: 0.25em 5px;
+                    }
+    
+                    &.focus{
+                        border:2px solid purple;
+                        box-shadow: 0px 0px 5px violet;
+    
+                        transition-property: border, box-shadow;
+                        transition-duration: 100ms;
+                        transition-delay: 0;
+                        transition-timing-function: ease;
+    
+                        svg.arrow{
+                            rotate: -180deg;
+                            transition: rotate;
+                            transition-duration: 200ms;
+                            transition-delay: 0;
+                            transition-timing-function: ease;
+                        }
+                    }
+    
+    
+    
+    
+                }
+                
+    
+                
+            }
+            
+        }
+    }
+    
+    .dropmenu{
+        width: 350px;
+        height: 0;
+        margin-top:3px;
+    
+        translate: 0px -100px;
+        opacity: 0;
+        visibility: hidden;
+    
+        transition: translate, opacity, visibility;
+        transition-duration: 450ms;
+        transition-delay: 200ms;
+        transition-timing-function: ease-in;
+    
+        &.active{
+            translate: 0px 0px;
+            opacity: 1;
+            visibility: visible;
+            
+            transition: translate, opacity visibility;
+            transition-duration: 450ms;
+            transition-delay: 0;
+            transition-timing-function: ease;
+        }
+    
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin:0 2px;
+            box-shadow: 0 0 5px black;
+            border-radius: 5px;
+            li{
+                border-bottom: 1px solid black;
+                padding: 1em;
+                color: black;
+                opacity: 0;
+    
+                transition-property: opacity;
+                transition-delay: 50ms;
+                transition-duration: 200ms;
+                transition-timing-function: ease;
+    
+                &:last-child{
+                    border-bottom: none;
+                }
+    
+                &:hover{
+                    background-color: gray;
+                }
+    
+                &.effect{
+                opacity: 1;
+                transition-property: opacity;
+                transition-delay:0ms;
+                transition-duration: 200ms;
+                transition-timing-function: ease;
+                }
+            }
+        }
+    }
+}
+
+#selector_2{
+    .nav_container_hvr{
+        width: 350px;
+        nav{
+            ul{
+                list-style: none;
+                margin:0px;
+                padding: 0;
+                .hvr_dropmenu{
+                    padding: 1.5em 5px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    background-color: rgb(166, 209, 252);
+                    transition-property: border, background-color;
+                    transition-duration: 500ms;
+                    transition-delay: 200ms;
+                    transition-timing-function: ease;
+            
+                    &:hover{
+                        border:2px solid rgb(37, 42, 174);
+                        box-shadow: 0px 0px 5px rgb(187, 211, 221);
+                        background-color: rgb(158, 218, 243);
+                        transition-property:border, background-color;
+                        transition-duration: 500ms;
+                        transition-timing-function: ease;
+                        transition-delay: 0ms;                    
+                        }
+                    
+    
+                    svg.arrow{
+                        width: 10px;
+                        height: 10px;
+                        padding: 0.25em 5px;
+                        rotate: 0deg;
+    
+    
+                        transition: rotate;
+                        transition-duration: 300ms;
+                        transition-delay: 100ms;
+                        transition-timing-function: ease;
+                    }
+
+                    div{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+                    }
+    
+                    svg.calendar{
+                        width: 25px;
+                        height: 25px;
+                        transform: scale(1);
+                        
+                        
+                        transition: transform;
+                        transition-duration: 200ms;
+                        transition-delay: 0;
+                        transition-timing-function: ease;
+                    }
+    
+                    &.focus{
+                        border:2px solid rgb(77, 56, 179);
+                        box-shadow: 0px 0px 5px rgb(130, 184, 238);
+    
+                        transition-property: border, box-shadow;
+                        transition-duration: 200ms;
+                        transition-delay: 100;
+                        transition-timing-function: ease;
+    
+                        svg.arrow{
+                            rotate: -180deg;
+                            transition: rotate;
+                            transition-duration: 200ms;
+                            transition-delay: 0;
+                            transition-timing-function: ease;
+                        }
+
+                        svg.calendar{
+                            transform: scale(0.85);
+                        
+                            transition: transform;
+                            transition-duration: 200ms;
+                            transition-delay: 0;
+                            transition-timing-function: ease;
+                        }
+                    }
+    
+    
+    
+    
+                }
+                
+    
+                
+            }
+            
+        }
+    }
+    
+    .dropmenu_hvr{
+        width: 350px;
+        height: 0;
+        margin-top:3px;
+    
+        translate: 0px +100px;
+        opacity: 0;
+        visibility: hidden;
+    
+        transition: translate, opacity, visibility;
+        transition-duration: 450ms;
+        transition-delay: 200ms;
+        transition-timing-function: ease-in;
+    
+        &.active{
+            translate: 0px 0px;
+            opacity: 1;
+            visibility: visible;
+            
+            transition: translate, opacity visibility;
+            transition-duration: 450ms;
+            transition-delay: 0;
+            transition-timing-function: ease;
+        }
+    
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin:0 2px;
+            box-shadow: 0 0 5px black;
+            border-radius: 5px;
+            li{
+                border-bottom: 1px solid black;
+                padding: 1em;
+                color: black;
+                opacity: 0;
+    
+                transition-property: opacity;
+                transition-delay: 50ms;
+                transition-duration: 200ms;
+                transition-timing-function: ease;
+    
+                &:last-child{
+                    border-bottom: none;
+                }
+    
+                &:hover{
+                    background-color: rgb(162, 162, 162);
+                }
+    
+                &.effect{
+                opacity: 1;
+                transition-property: opacity;
+                transition-delay:0ms;
+                transition-duration: 200ms;
+                transition-timing-function: ease;
+                }
+            }
+        }
+    }
+}

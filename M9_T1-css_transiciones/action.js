@@ -34,6 +34,7 @@ const showMenu = (ev) => {
 }
 
 const showMenuHVR = (ev) => {
+    let label = document.getElementById("label_calendar");
     let menu = document.getElementById("menu_hvr");
     let elements = document.querySelectorAll('#menu_hvr > ul > li');
 
@@ -45,9 +46,9 @@ const showMenuHVR = (ev) => {
         ev.target.classList.add("focus");
         for (let value of elements){
             value.classList.add("effect");
-        }
+    }
 
-
+        label.classList.add("label_calendar_active");
         menu.classList.add("active");
         active_hvr = true;
     }else{
@@ -56,7 +57,7 @@ const showMenuHVR = (ev) => {
         for (let value of elements){
             value.classList.remove("effect");
         }
-
+        label.classList.remove("label_calendar_active");
         menu.classList.remove("active");
         active_hvr = false;
     }
@@ -69,8 +70,4 @@ document.addEventListener("click", (ev) => {
 
 document.addEventListener("mouseover", (ev) =>{
     if(ev.target.matches(".hvr_dropmenu")) showMenuHVR(ev);
-})
-
-document.addEventListener(action, (ev) => {
-
 })

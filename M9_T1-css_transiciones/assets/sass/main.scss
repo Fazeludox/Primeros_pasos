@@ -2,6 +2,8 @@ html, body{
    margin:10px;
     font-family: monospace;
     font-size: 15px;
+    background-color: #262626;
+    color: #D9D9D9;
 }
 
 .main{
@@ -16,6 +18,7 @@ html, body{
     .nav_container{
         width: 350px;
         nav{
+            color: #262626;
             ul{
                 list-style: none;
                 margin:0px;
@@ -27,21 +30,13 @@ html, body{
                     justify-content: space-between;
                     
                     &.btn_dropmenu{
-                        border: 1px solid gray;
+                        border: 1px solid rgb(53, 52, 52);
                         border-radius: 5px;
-                        background-color: rgb(214, 200, 213);
+                        background-color: #D9D9D9;
                         transition-property: border, background-color;
                         transition-duration: 500ms;
                         transition-delay: 200ms;
                         transition-timing-function: ease;
-    
-                        &:hover{
-                            background-color: rgb(255, 228, 255);
-                            transition-property: background-color;
-                            transition-duration: 500ms;
-                            transition-timing-function: ease;
-                            transition-delay: 0ms;                    
-                        }
                     }
     
                     svg.arrow{
@@ -64,10 +59,9 @@ html, body{
                     }
     
                     &.focus{
-                        border:2px solid purple;
-                        box-shadow: 0px 0px 5px violet;
+                        border:3px solid rgb(157, 12, 12);
     
-                        transition-property: border, box-shadow;
+                        transition-property: border;
                         transition-duration: 100ms;
                         transition-delay: 0;
                         transition-timing-function: ease;
@@ -129,6 +123,8 @@ html, body{
                 padding: 1em;
                 color: black;
                 opacity: 0;
+
+        background-color: #D9D9D9;
     
                 transition-property: opacity;
                 transition-delay: 50ms;
@@ -140,7 +136,8 @@ html, body{
                 }
     
                 &:hover{
-                    background-color: gray;
+                    background-color: #262626;
+                    color:#D9D9D9;
                 }
     
                 &.effect{
@@ -170,35 +167,68 @@ html, body{
                     justify-content: space-between;
                     border: 1px solid gray;
                     border-radius: 5px;
-                    background-color: rgb(166, 209, 252);
-                    transition-property: border, background-color;
+                    background-color: #262626;
                     transition-duration: 500ms;
                     transition-delay: 200ms;
                     transition-timing-function: ease;
+
+                    .label_calendar{
+                        position: unset;
+                        top: em;
+                        background-color:transparent;
+                        padding: 0px;
+                        border-radius: 0px;
+                        color: #D9D9D9;
+
+                        transition-property: position, background-color, padding, border-radius, color;
+                        transition-duration: 200ms;
+                        transition-delay: 200ms;
+                        transition-timing-function: ease;
+                    }
             
                     &:hover{
-                        border:2px solid rgb(37, 42, 174);
-                        box-shadow: 0px 0px 5px rgb(187, 211, 221);
-                        background-color: rgb(158, 218, 243);
-                        transition-property:border, background-color;
+                        border:3px solid rgb(37, 42, 174);
+                        transition-property:border;
                         transition-duration: 500ms;
                         transition-timing-function: ease;
                         transition-delay: 0ms;                    
                         }
                     
     
-                    svg.arrow{
-                        width: 10px;
-                        height: 10px;
-                        padding: 0.25em 5px;
-                        rotate: 0deg;
-    
-    
-                        transition: rotate;
-                        transition-duration: 300ms;
-                        transition-delay: 100ms;
-                        transition-timing-function: ease;
+                    svg{
+
+                     fill: #D9D9D9;  
+
+
+                        &.arrow{
+                            width: 10px;
+                            height: 10px;
+                            padding: 0.25em 5px;
+                            rotate: 0deg;
+        
+        
+                            transition: rotate;
+                            transition-duration: 300ms;
+                            transition-delay: 100ms;
+                            transition-timing-function: ease;
+                        }
+
+
+
+                        &.calendar{
+                            width: 25px;
+                            height: 25px;
+                            transform: scale(1);
+                            
+                            
+                            transition: transform;
+                            transition-duration: 200ms;
+                            transition-delay: 0;
+                            transition-timing-function: ease;
+                        }
                     }
+                    
+
 
                     div{
                         display: flex;
@@ -207,43 +237,57 @@ html, body{
                         gap: 10px;
                     }
     
-                    svg.calendar{
-                        width: 25px;
-                        height: 25px;
-                        transform: scale(1);
-                        
-                        
-                        transition: transform;
-                        transition-duration: 200ms;
-                        transition-delay: 0;
-                        transition-timing-function: ease;
-                    }
+
     
                     &.focus{
                         border:2px solid rgb(77, 56, 179);
-                        box-shadow: 0px 0px 5px rgb(130, 184, 238);
+                        
     
-                        transition-property: border, box-shadow;
+                        transition-property: border;
                         transition-duration: 200ms;
                         transition-delay: 100;
                         transition-timing-function: ease;
-    
-                        svg.arrow{
-                            rotate: -180deg;
-                            transition: rotate;
-                            transition-duration: 200ms;
-                            transition-delay: 0;
-                            transition-timing-function: ease;
-                        }
 
-                        svg.calendar{
-                            transform: scale(0.85);
-                        
-                            transition: transform;
-                            transition-duration: 200ms;
-                            transition-delay: 0;
-                            transition-timing-function: ease;
+                        .label_calendar_active{
+                            position: relative;
+                            top: -3em;
+                            left: -1em;
+                            background-color:#262626;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            border-radius: 1px;
+                            color:rgb(77, 56, 179);
+
+                            font-size: 12px;
+
+                            transition-property: position, background-color, padding, border-radius, color;
+                            transition-duration: 350ms;
+                            transition-delay: 50;
+                            transition-timing-function: ease-in;
                         }
+    
+                        svg{
+
+                            &.arrow{
+                                rotate: -180deg;
+                                transition: rotate;
+                                transition-duration: 200ms;
+                                transition-delay: 0;
+                                transition-timing-function: ease;
+                            }
+    
+                            &.calendar{
+                                transform: scale(0.85);
+                            
+                                transition: transform;
+                                transition-duration: 200ms;
+                                transition-delay: 0;
+                                transition-timing-function: ease;
+                            }
+
+
+                        }
+                        
                     }
     
     
@@ -289,6 +333,8 @@ html, body{
             margin:0 2px;
             box-shadow: 0 0 5px black;
             border-radius: 5px;
+
+            background-color: #D9D9D9;
             li{
                 border-bottom: 1px solid black;
                 padding: 1em;

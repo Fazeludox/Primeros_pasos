@@ -1,0 +1,126 @@
+
+
+html, body{
+    margin:0px;
+    padding: 0px;
+}
+
+
+
+header{
+    background-color: #323232;
+    nav{
+        ul{
+            list-style: none;
+            margin:0px;
+            padding: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            li{
+                color: whitesmoke;
+                padding: 15px;
+                font-size: 20px;
+                
+                .fas{
+                    transform: scale(0.9);
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+
+                &:hover{
+                    color: #646464;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+aside{
+    margin:0px;
+    width: 300px;
+    translate:-330px 0px;
+
+    transition-property: translate;
+    transition-duration: 800ms;
+    transition-delay: 300ms;
+    transition-timing-function: ease;
+
+
+    .lateral{
+        margin:0px;
+        height: 100vh;
+
+        background-color: #646464;
+
+        ul{
+            margin:0px; 
+            padding: 0px;
+            list-style: none;
+            li{
+                color: whitesmoke;
+                padding:1em;
+
+                opacity: 0;
+                translate: -200px 0px;
+
+                transition-property: translate, opacity;
+                transition-duration: 500ms;
+                transition-delay:0ms;
+                transition-timing-function: ease-in;
+
+                &.elemento1{
+                opacity: 1;
+                translate: 0px 0px;
+
+                transition-property: translate, opacity;
+                transition-duration: 500ms;
+                transition-delay:300ms;
+                transition-timing-function: ease-in;
+                }
+
+
+                &.elemento2{
+                    opacity: 1;
+                    translate: 0px 0px;
+    
+                    transition-property: translate, opacity;
+                    transition-duration: 500ms;
+                    transition-delay:500ms;
+                    transition-timing-function: ease-in;
+                    }
+
+                
+                &.elemento3{
+                    opacity: 1;
+                    translate: 0px 0px;
+        
+                    transition-property: translate, opacity;
+                    transition-duration: 500ms;
+                    transition-delay:600ms;
+                    transition-timing-function: ease-in;
+                    }
+    
+                &:hover{
+                    background-color:#707070;
+                }
+            }
+        }
+
+        
+
+    }
+
+    &.active{
+        margin:0px;
+        translate:0px 0px;
+
+        transition-property: translate;
+        transition-duration: 500ms;
+        transition-delay: 200ms;
+        transition-timing-function: ease;
+    }
+}

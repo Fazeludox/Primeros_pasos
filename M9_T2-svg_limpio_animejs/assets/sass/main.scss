@@ -1,0 +1,99 @@
+body, html{
+    margin:0px;
+    padding: 0px;
+}
+
+#contenedor{
+    margin:0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(221, 221, 221);
+    transition-property: background-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-delay: 200ms;
+
+
+    &.active{
+        background-color: #7d7d7d;
+        transition-property: background-color;
+        transition-duration: 300ms;
+        transition-timing-function: ease;
+    }
+}
+
+svg{
+    width: 100px;
+    height: 100px;
+}
+div{
+    margin:10px;
+    &.code{
+        .code_logo{
+            
+            .bg_code{
+                fill:#EEE;
+                fill-opacity: 0;
+                stroke:#353535;
+                stroke-width:10px;
+                stroke-linecap: round;
+                stroke-dasharray:400% ;
+                stroke-dashoffset: -400%;
+            }
+            .top_bg_code{
+                fill:#353535;
+                opacity:0;
+            }
+            
+            .code{
+                opacity: 0;
+                fill:#353535;
+                transform-origin: center;;
+            }
+        }
+    }
+    
+    &.github{
+        
+        .github_logo{
+             display: none;
+            .bg_github{
+                opacity: 0;
+                fill:#F4F4F4;
+                stroke:#3C5661;
+                stroke-width:50px;
+                
+                stroke-dasharray: 400%;
+                stroke-dashoffset: -395%;
+            }
+            .github{
+                opacity: 0;
+                fill:#3C5661;
+                transform-origin: center;
+            }
+        }
+    }
+    
+    &.discord{
+        .discord_logo{
+            display: none;
+            .bg_discord{
+                opacity: 0;
+                fill:#7289DA;
+                stroke:#243261;
+                stroke-width:15;
+            }
+    
+            .discord{
+                opacity: 0;
+                fill:#F2F2F2;
+            }
+        }
+    }
+    
+}

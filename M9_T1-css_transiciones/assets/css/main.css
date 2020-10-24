@@ -236,18 +236,6 @@ html, body {
           transition-timing-function: ease;
 }
 
-#selector_2 .nav_container_hvr nav ul .hvr_dropmenu:hover {
-  border: 3px solid #252aae;
-  -webkit-transition-property: border;
-  transition-property: border;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
-  -webkit-transition-delay: 0ms;
-          transition-delay: 0ms;
-}
-
 #selector_2 .nav_container_hvr nav ul .hvr_dropmenu svg {
   fill: #D9D9D9;
 }

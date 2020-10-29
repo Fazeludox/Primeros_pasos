@@ -12,8 +12,6 @@ let links;
 let sections;
 let modals;
 
-let ini; 
-let wpos;
 
 /**
  * Variables globales de animación
@@ -23,6 +21,8 @@ let wpos;
  * Si quieres crear una linea de animación nueva, puedes crear tus variables aquí
  */
 let animation_layout;
+let animation_toggles;
+
 
 
 /**
@@ -111,6 +111,7 @@ const swipeTo = (getTo = '#menu_page') => {
     item = document.querySelectorAll('.swiper_item');
     let i=0;
 
+    //Lectura de posiciones del swiper
     for( let value of item){
         if(getTo === "#"+value.id){
             swiper.slideTo(i);   
@@ -119,9 +120,10 @@ const swipeTo = (getTo = '#menu_page') => {
         }
     } 
 
+    //Seleccionador de animaciones
     switch(getTo){
-        case '#main_page':
-            animation_slider();
+        case '#menu_page':
+            animation_menu();
             break;
         case '#settings_page':
             animation_settings();
@@ -129,8 +131,9 @@ const swipeTo = (getTo = '#menu_page') => {
         case '#leaderboard_page':
             animation_leader();
             break;
+
             default: 
-            animation_slider();
+            console.log(getTo + " No esta definido")
      }
 
     if (!swiper) {
@@ -139,7 +142,6 @@ const swipeTo = (getTo = '#menu_page') => {
     // clean up funcs
     GAME_UI.state.navigationStage = getTo;
 };
-
 
 
 /**
@@ -161,12 +163,9 @@ const navigationTo = (getTo, animationType) => {
          */
         case 'fade_in':
             animation_FadeIn(getTo);
-            animation_layout.finished.then(() => {
-                // Fake splash
-                setTimeout(() => {
+            animation_layout.finished.then(()=>{
                     navigationTo('#swiper_page', 'splash_to_menu');
-                }, 2000);
-            });
+            })
             break;
 
         /**
@@ -174,15 +173,47 @@ const navigationTo = (getTo, animationType) => {
          */
         case 'splash_to_menu':
             animation_SplashToMenu(getTo);
+            animation_layout.finished.then(()=>{
+                animation_menu();
+            })
             break;
+
+        //Menu al juego
 
         case 'menu_to_game':
-            webposition(getTo);
+            animation_MenuToMain();
             break;
+        
+        //Juego al menu
 
         case 'game_out':
-            location.reload();
+            animation_cancel_exit();
+            animation_layout.finished.then(()=>{
+                animation_PopupResume();
+                animation_layout.finished.then(()=>{
+                    animation_MaintoMenu();
+                    animation_menu();
+                    game.resetGame(getTo);
+                        })
+            })
             break;
+        
+
+        //Muerte en el juego
+        case 'dead':
+            animation_dead();
+            break;
+        
+        
+        //Seleccionar salir tras la muerte
+        case 'dead_exit':
+            animation_dead_reset();
+            animation_layout.finished.then(()=>{
+                animation_MaintoMenu();
+                animation_menu();
+                game.resetGame(getTo);
+                    })
+        break;
 
         /**
          * ErrHandler
@@ -217,34 +248,45 @@ const popUpToggle = (getTo, animationType) => {
         case 'pause_modal':
             animation_PopupPause(getTo);
             animation_layout.finished.then(() => {
-                setTimeout(() =>{
                     game.pauseOrResume();
-                }, 100);
             });
             break;
-
+        
+        //Volver al juego
         case 'resume_modal':
             animation_PopupResume(getTo);
             animation_layout.finished.then(()=>{
-                setTimeout(() =>{
                     game.pauseOrResume();
-                }, 100);
             })
             break;
+        
+        //Salir del juego
         case 'confirm_modal_in':
-            animation_PopupResume(getTo);
-            animation_layout.finished.then(()=> {
+            animation_exit();
+        break;
+        
+        //Reiniciar juego
+        case 'reset':
+            animation_dead_reset();
+            animation_layout.finished.then(()=>{
                 showSpinner();
-                animation_outGame();
-                animation_layout.finished.then(()=> {
-                    hideSpinner();
-                    document.getElementById(GAME_UI.modalWindows.pause.id).style.setProperty('visibility', 'hidden');
-                    game.resetGame(getTo);
-                })
-                
+                animation_main()
+            animation_layout.finished.then(()=> {
+                hideSpinner();
+                document.getElementById(GAME_UI.modalWindows.dead.id).style.setProperty('visibility', 'hidden');
+                game.resetGame(getTo);
+                startGame();
+              })
             })
-            
-            
+            break;
+        
+
+        //Cerrar modal de salida
+        case 'confirm_modal_out':
+            animation_cancel_exit();
+            animation_layout.finished.then(()=>{
+                GAME_UI.modalWindows.confirm.style.setProperty('visibility', 'hidden');
+            })
             break;
         /**
          * ErrHandler
@@ -284,10 +326,6 @@ const initNavigation = () => {
     links = GAME_UI.app.querySelectorAll('a[href^="#"]');
     sections = GAME_UI.app.querySelectorAll('section');
     modals = GAME_UI.app.querySelector('modal_window');
-    
-    //Defino mis variables
-    ini = GAME_UI.state.navigationStage;
-    wpos = '';
 
     initNavigationEvents();
 };

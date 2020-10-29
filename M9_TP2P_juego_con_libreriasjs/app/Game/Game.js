@@ -90,6 +90,7 @@ class Game {
         }, 50);
     }
 
+    //Funcion para reiniciar el juego
     resetGame(getTo){
 
         this.ended = true;
@@ -104,6 +105,7 @@ class Game {
     while (GAME_UI.gameBoard.firstChild){
 	    GAME_UI.gameBoard.removeChild(GAME_UI.gameBoard.lastChild);
     }
+
     if(!getTo){
         game = new Game();
 
@@ -238,8 +240,9 @@ class Game {
         let gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE)
         gameOver.render();
 
+        //Al morir lanzar el modal de muerte.
         setTimeout(() => {
-            navigationTo('animation', 'game_out');
+            navigationTo('animation', 'dead'); 
         }, 1500);
     }
 
@@ -277,9 +280,11 @@ class Game {
             this.opponent.render();
         }
         this.playerShots.forEach((shot) => {
+            
             shot.render();
         });
         this.opponentShots.forEach((shot) => {
+            
             shot.render();
         });
     }

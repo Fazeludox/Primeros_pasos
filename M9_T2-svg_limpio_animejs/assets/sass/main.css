@@ -1,0 +1,110 @@
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+
+#contenedor {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #dddddd;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+
+#contenedor.active {
+  background-color: #7d7d7d;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+}
+
+div {
+  margin: 10px;
+}
+
+div.code .code_logo .bg_code {
+  fill: #EEE;
+  fill-opacity: 0;
+  stroke: #353535;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke-dasharray: 400%;
+  stroke-dashoffset: -400%;
+}
+
+div.code .code_logo .top_bg_code {
+  fill: #353535;
+  opacity: 0;
+}
+
+div.code .code_logo .code {
+  opacity: 0;
+  fill: #353535;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+div.github .github_logo {
+  display: none;
+}
+
+div.github .github_logo .bg_github {
+  opacity: 0;
+  fill: #F4F4F4;
+  stroke: #3C5661;
+  stroke-width: 50px;
+  stroke-dasharray: 400%;
+  stroke-dashoffset: -395%;
+}
+
+div.github .github_logo .github {
+  opacity: 0;
+  fill: #3C5661;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+div.discord .discord_logo {
+  display: none;
+}
+
+div.discord .discord_logo .bg_discord {
+  opacity: 0;
+  fill: #7289DA;
+  stroke: #243261;
+  stroke-width: 15;
+}
+
+div.discord .discord_logo .discord {
+  opacity: 0;
+  fill: #F2F2F2;
+}
+/*# sourceMappingURL=main.css.map */

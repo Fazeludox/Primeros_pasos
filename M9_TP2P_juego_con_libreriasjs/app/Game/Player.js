@@ -19,7 +19,7 @@ class Player extends Character {
 
         super(game, width, height, x, y, speed, myImage, myImageDead);
         this.lifes = this.game.lifes;
-        this.updatesPerShot = 10;
+        this.updatesPerShot = 20;
         this.updatesPerShotCount = 0;
         this.dragging = false;
         this.initDraggingAbility();
@@ -30,6 +30,7 @@ class Player extends Character {
      */
     update() {
         document.querySelector('.lifes .amount').innerHTML = this.lifes;
+
         if (!this.dead && !this.dragging) {
             switch (this.game.keyPressed) {
                 case KEY_LEFT:
@@ -56,6 +57,9 @@ class Player extends Character {
             this.updatesPerShotCount++;
             if (this.updatesPerShotCount % this.updatesPerShot == 0) {
                 this.game.shoot(this);
+                if(shoot_status){
+                    shoot_fx.play(); //Reproducir el efecto si esta activado
+                }
             }
         }
     }
@@ -64,19 +68,28 @@ class Player extends Character {
     /**
      * In case game is touchable...
      */
-    initDraggingAbility() {
+     initDraggingAbility() {
         let interactable = interact(this.myImageContainer);
 
         interactable.draggable({
+            modifiers: [
+                interact.modifiers.restrictRect({
+                  restriction: 'parent'
+                })
+              ],
             listeners: {
+                
                 start: ev => {
                     console.log(ev)
                 }, 
                 move: ev => {
-                    console.log(ev)
+                    if(!this.dead){
+                        this.x += ev.dx
+                    }
                 }, 
                 end: ev => {
-                    console.log(ev)
+                    ev.target.style.transform =
+                    `translate(${this.x}px)`;
                 }
             }
         })
@@ -87,6 +100,8 @@ class Player extends Character {
     /**
      * Mata al jugador
      */
+
+    //Agregado el gastar vidas antes de morir
     die() {
 
         console.log(this.game.lifes);
@@ -94,15 +109,15 @@ class Player extends Character {
         if (!this.dead && this.lifes>0) {
             this.lifes--;
             setTimeout(() => {
-                
                 this.myImage.src = PLAYER_PICTURE;
                 this.dead = false;
-
+                this.dragging = false;
             }, 2000);
 
             this.myImage.src = this.myImageDead;
+
             this.dead = true;
-            
+
             console.log(this.lifes);
 
             super.die();

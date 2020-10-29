@@ -9,6 +9,11 @@ let toggles;
 let swipeSection;
 let swiper;
 
+let BGM;
+let song= false;
+
+let shoot_fx;
+let shoot_status = false;
 
 /**
  * @function initToggles
@@ -16,14 +21,63 @@ let swiper;
  * Inicializa los Toggles en la aplicación
  * Toggle son los switchers
  */
+
+ //Iniciar Toggles y comprobar que toggles activar.
 let initToggles = () => {
+
     toggles.forEach(t => {
+    
         t.addEventListener('click', () => {
-            t.classList.toggle('on');
+
+            if(t.matches('.on')){
+                animation_toggle_off(t);
+
+                animation_toggles.finished.then(()=>{
+                    checking_bgm(t);
+                    checking_shoot(t);
+                    t.classList.remove('on');
+                })
+                
+            }else{
+                animation_toggle_on(t);
+                animation_toggles.finished.then(()=>{
+                    checking_bgm(t);
+                    checking_shoot(t);
+                    t.classList.add('on');
+                })
+            }
+
         });
     });
 };
 
+//Comprobar si la bgm esta sonando
+
+let checking_bgm = (t) => {
+    if(t.matches('.BGM')){
+        if(!song){
+            BGM.play();
+            song = true;
+        }else{
+            BGM.pause(); 
+            song = false;
+        }
+    }
+}
+
+//Comprobar si los efectos estan sonando
+
+let checking_shoot = (t) => {
+    if(t.matches('.shoots')){
+        if(!shoot_status){
+            shoot_fx.play();
+            shoot_status = true;
+        }else{
+            shoot_fx.pause(); 
+            shoot_status = false;
+        }
+    }
+}
 
 /**
  * @function initSwiper
@@ -31,12 +85,15 @@ let initToggles = () => {
  * Inicializa SwiperJS con las configuraciones necesarias
  * La navegación entre las página settings, menu, leaderboard es con Swiper
  */
+
+ //Definicion del swiper
+
 let initSwiper = () => {
     swiper = new Swiper(swipeSection,{
         direction: 'horizontal',
         spaceBetween: 30,
         loop: false,
-
+        initialSlide: 1, 
         pagination: {
             el: 'swiper_item',
         }
@@ -51,7 +108,10 @@ let initSwiper = () => {
  * La ejecuto en main.js
  */
 const initUI = () => {
-    // toggles
+    // toggles para activar el audio y efectos
+    BGM =  document.getElementById("bgm");
+    shoot_fx = document.getElementById("shoot");
+
     toggles = GAME_UI.app.querySelectorAll('.toggle');
     initToggles();
 

@@ -126,14 +126,14 @@ sup {
 }
 
 a {
-  color: #345c8d;
+  color: #ebebeb;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #264468;
+  color: #d2d2d2;
   text-decoration: none;
 }
 
@@ -358,6 +358,30 @@ template {
   }
 }
 
+@-webkit-keyframes pulse {
+  0% {
+    font-size: 17px;
+  }
+  50% {
+    font-size: 14px;
+  }
+  100% {
+    font-size: 17px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 17px;
+  }
+  50% {
+    font-size: 14px;
+  }
+  100% {
+    font-size: 17px;
+  }
+}
+
 @font-face {
   font-family: 'Nunito';
   src: url("../fonts/nunito/Nunito-Bold.eot");
@@ -368,106 +392,10 @@ template {
 
 @font-face {
   font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-ExtraBold.eot");
-  src: url("../fonts/nunito/Nunito-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-ExtraBold.woff2") format("woff2"), url("../fonts/nunito/Nunito-ExtraBold.woff") format("woff"), url("../fonts/nunito/Nunito-ExtraBold.ttf") format("truetype"), url("../fonts/nunito/Nunito-ExtraBold.svg#Nunito-ExtraBold") format("svg");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-Black.eot");
-  src: url("../fonts/nunito/Nunito-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-Black.woff2") format("woff2"), url("../fonts/nunito/Nunito-Black.woff") format("woff"), url("../fonts/nunito/Nunito-Black.ttf") format("truetype"), url("../fonts/nunito/Nunito-Black.svg#Nunito-Black") format("svg");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-SemiBoldItalic.eot");
-  src: url("../fonts/nunito/Nunito-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-SemiBoldItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-SemiBoldItalic.woff") format("woff"), url("../fonts/nunito/Nunito-SemiBoldItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-SemiBoldItalic.svg#Nunito-SemiBoldItalic") format("svg");
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-LightItalic.eot");
-  src: url("../fonts/nunito/Nunito-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-LightItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-LightItalic.woff") format("woff"), url("../fonts/nunito/Nunito-LightItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-LightItalic.svg#Nunito-LightItalic") format("svg");
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
   src: url("../fonts/nunito/Nunito-Regular.eot");
   src: url("../fonts/nunito/Nunito-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-Regular.woff2") format("woff2"), url("../fonts/nunito/Nunito-Regular.woff") format("woff"), url("../fonts/nunito/Nunito-Regular.ttf") format("truetype"), url("../fonts/nunito/Nunito-Regular.svg#Nunito-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-ExtraLight.eot");
-  src: url("../fonts/nunito/Nunito-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-ExtraLight.woff2") format("woff2"), url("../fonts/nunito/Nunito-ExtraLight.woff") format("woff"), url("../fonts/nunito/Nunito-ExtraLight.ttf") format("truetype"), url("../fonts/nunito/Nunito-ExtraLight.svg#Nunito-ExtraLight") format("svg");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-BoldItalic.eot");
-  src: url("../fonts/nunito/Nunito-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-BoldItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-BoldItalic.woff") format("woff"), url("../fonts/nunito/Nunito-BoldItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-BoldItalic.svg#Nunito-BoldItalic") format("svg");
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-ExtraLightItalic.eot");
-  src: url("../fonts/nunito/Nunito-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-ExtraLightItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-ExtraLightItalic.woff") format("woff"), url("../fonts/nunito/Nunito-ExtraLightItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-ExtraLightItalic.svg#Nunito-ExtraLightItalic") format("svg");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-Light.eot");
-  src: url("../fonts/nunito/Nunito-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-Light.woff2") format("woff2"), url("../fonts/nunito/Nunito-Light.woff") format("woff"), url("../fonts/nunito/Nunito-Light.ttf") format("truetype"), url("../fonts/nunito/Nunito-Light.svg#Nunito-Light") format("svg");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-SemiBold.eot");
-  src: url("../fonts/nunito/Nunito-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-SemiBold.woff2") format("woff2"), url("../fonts/nunito/Nunito-SemiBold.woff") format("woff"), url("../fonts/nunito/Nunito-SemiBold.ttf") format("truetype"), url("../fonts/nunito/Nunito-SemiBold.svg#Nunito-SemiBold") format("svg");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-Italic.eot");
-  src: url("../fonts/nunito/Nunito-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-Italic.woff2") format("woff2"), url("../fonts/nunito/Nunito-Italic.woff") format("woff"), url("../fonts/nunito/Nunito-Italic.ttf") format("truetype"), url("../fonts/nunito/Nunito-Italic.svg#Nunito-Italic") format("svg");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-BlackItalic.eot");
-  src: url("../fonts/nunito/Nunito-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-BlackItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-BlackItalic.woff") format("woff"), url("../fonts/nunito/Nunito-BlackItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-BlackItalic.svg#Nunito-BlackItalic") format("svg");
-  font-weight: 900;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Nunito';
-  src: url("../fonts/nunito/Nunito-ExtraBoldItalic.eot");
-  src: url("../fonts/nunito/Nunito-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito/Nunito-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/nunito/Nunito-ExtraBoldItalic.woff") format("woff"), url("../fonts/nunito/Nunito-ExtraBoldItalic.ttf") format("truetype"), url("../fonts/nunito/Nunito-ExtraBoldItalic.svg#Nunito-ExtraBoldItalic") format("svg");
-  font-weight: 800;
-  font-style: italic;
 }
 
 .color1 {
@@ -554,8 +482,8 @@ h2 {
 }
 
 a {
-  text-decoration: underline;
-  color: #008cff;
+  text-decoration: none;
+  color: #7553A6;
 }
 
 #app {
@@ -569,6 +497,129 @@ a {
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
+}
+
+#app #splash_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app #main_page {
+  background-color: #323232;
+}
+
+#app #main_page #pause {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#app #main_page .ui {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  z-index: 2;
+}
+
+#app #main_page .ui .lifes {
+  width: 50px;
+  padding: 5px;
+}
+
+#app #main_page .ui .lifes .icon {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 17px;
+  color: red;
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+#app #main_page .ui .score {
+  padding: 5px;
+}
+
+#app #main_page .ui .score .icon {
+  padding: 3px;
+  font-size: 18px;
+  color: #7553A6;
+}
+
+#app #main_page .ui .pause {
+  padding: 5px;
+}
+
+#app #main_page .ui .pause .pause_btn {
+  margin: auto;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  color: #A48ABF;
+  font-size: 30px;
+  -webkit-transition-property: color, -webkit-transform;
+  transition-property: color, -webkit-transform;
+  transition-property: transform, color;
+  transition-property: transform, color, -webkit-transform;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+#app #main_page .ui .pause .pause_btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #c58ab1;
+  -webkit-transition-property: color, -webkit-transform;
+  transition-property: color, -webkit-transform;
+  transition-property: transform, color;
+  transition-property: transform, color, -webkit-transform;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+#app #main_page .game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #6C7372;
+  border-radius: 5px;
 }
 
 #app .full_window {
@@ -616,12 +667,6 @@ a {
   visibility: unset;
 }
 
-#app .game {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 @media screen and (min-width: 500px) {
   #app {
     border: 1px solid #ddd;
@@ -629,6 +674,406 @@ a {
     margin: 2rem auto;
     height: calc(100vh - 4rem);
   }
+}
+
+#settings_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#settings_page header {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.settings {
+  margin: 10px;
+}
+
+.settings .setting {
+  margin: auto 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 15px;
+}
+
+.settings .setting .setting_toggle {
+  margin: 5px;
+}
+
+.setting_toggle {
+  padding: 5px;
+  color: #626262;
+}
+
+.setting_toggle .toggle {
+  width: 50px;
+  height: calc(20px + 0.1rem * 2 + 2.8px);
+  border-radius: 30px;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.setting_toggle .toggle .mdi {
+  position: absolute;
+  font-size: 1.1rem;
+  bottom: -3px;
+  height: 26px;
+  left: 0px;
+}
+
+.setting_toggle .toggle.on {
+  color: #c58ab1;
+}
+
+.setting_toggle .toggle:hover {
+  color: #6C7372;
+}
+
+#menu_page {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#menu_page .slider {
+  width: 90%;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px auto;
+  border: 2px solid #323232;
+  border-radius: 5px;
+  background-color: #727272;
+}
+
+#menu_page .slider .Game {
+  margin: 10px;
+}
+
+#menu_page .slider .Game .title_game {
+  width: 240px;
+  height: 80px;
+}
+
+#menu_page .slider .Game .title_game path {
+  stroke: #323232;
+  stroke-width: 2;
+}
+
+#menu_page .slider .images {
+  width: 200px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin: 5px;
+}
+
+#menu_page .slider .images svg {
+  width: 65px;
+  height: 65px;
+}
+
+#menu_page .slider .images svg.Player {
+  width: 80px;
+  height: 80px;
+}
+
+#menu_page .slider .images svg.Player .Cuerpo {
+  fill: #a48abf;
+  stroke: #989898;
+}
+
+#menu_page .slider .images svg.Player .Outside {
+  fill: #4c4e50;
+  stroke: #a48abf;
+  stroke-width: 0.5;
+}
+
+#menu_page .slider .images svg.Player .Cara {
+  fill: #fff;
+}
+
+#menu_page .slider .images svg.Player .Gafas .bg {
+  fill: #151515;
+}
+
+#menu_page .slider .images svg.Player .Gafas .light {
+  fill: #fff;
+}
+
+#menu_page .slider .images svg .Enemy1 {
+  stroke: #3d3d3d;
+  stroke-width: 2;
+}
+
+#menu_page .slider .images svg .Enemy1 .Cuerpo .Cuerpo_Fondo {
+  fill: #a48abf;
+}
+
+#menu_page .slider .images svg .Enemy1 .Cara {
+  fill: #7553a6;
+}
+
+#menu_page .slider .images svg .Enemy2 .Cuerpo .Vector {
+  fill: #7553a6;
+  stroke: #3d3d3d;
+}
+
+#menu_page .slider .images svg .Enemy2 .Cara .CaraEnemy {
+  fill: #a48abf;
+  stroke: 3d3d3d;
+}
+
+#menu_page .slider .images svg .Enemy2 .Cara .Ojos_boca {
+  fill: #7553a6;
+  stroke: #fff;
+}
+
+#menu_page .footer {
+  text-align: center;
+  margin-top: 2em;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 10px;
+}
+
+#menu_page .footer .Play {
+  width: 250px;
+  background-color: #A48ABF;
+  border: 2px solid #7553A6;
+  padding: 5px;
+  border-radius: 5px;
+  margin: auto;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #ebebeb;
+}
+
+#menu_page .footer .Play:hover {
+  background-color: #c58ab1;
+  border: 2px solid #A48ABF;
+  color: #d2d2d2;
+}
+
+#menu_page .footer .foot_navigation {
+  margin-top: 1em;
+}
+
+#menu_page .footer .foot_navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style-type: none;
+  margin-top: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  gap: 20px;
+}
+
+#menu_page .footer .foot_navigation ul li a {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#leaderboard_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#leaderboard_page .main {
+  text-align: center;
+  color: purple;
+  font-size: 35px;
+  margin: 5px;
+}
+
+#leaderboard_page .lboard .header {
+  color: #323232;
+}
+
+#leaderboard_page .lboard .main .lboard_table {
+  font-size: 16px;
+  padding: 10px;
+}
+
+#leaderboard_page .lboard .main .lboard_table .lboard_item {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.footer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  color: #c58ab1;
+}
+
+.footer a .bg {
+  border-radius: 50%;
+  background-color: #6C7372;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 5px auto;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.footer a .bg .mdi {
+  font-size: 2rem;
+  padding: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: whitesmoke;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition-property: color, -webkit-transform;
+  transition-property: color, -webkit-transform;
+  transition-property: color, transform;
+  transition-property: color, transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+}
+
+.footer a .bg .mdi:hover {
+  color: #c58ab1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-property: color, -webkit-transform;
+  transition-property: color, -webkit-transform;
+  transition-property: color, transform;
+  transition-property: color, transform, -webkit-transform;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 50ms;
+          transition-delay: 50ms;
+}
+
+.footer a .bg:hover {
+  background-color: #626262;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
 }
 
 .modal_window .overlay,
@@ -654,7 +1099,7 @@ a {
 
 .modal_window.modal_light .overlay,
 .spinner_window.modal_light .overlay {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .modal_window.modal_light .holder,
@@ -664,13 +1109,42 @@ a {
           box-shadow: none;
 }
 
-#modal_pause_window .settings {
+#modal_pause_window .overlay {
+  background-color: #7653a641;
+}
+
+#modal_pause_window .holder {
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px #626262;
+          box-shadow: 0px 0px 5px #626262;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal_pause_window .holder .settings {
+  width: 370px;
   margin: 0 0 8rem;
 }
 
-#modal_pause_window .btn {
+#modal_pause_window .holder .btn {
   display: block;
   margin-bottom: 1rem;
+}
+
+#modal_confirm {
+  text-align: center;
 }
 
 #modal_confirm .message {
@@ -699,6 +1173,27 @@ a {
   min-width: initial;
 }
 
+#modal_dead .holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#modal_dead .holder .cta a {
+  margin: 10px;
+}
+
 #modal_loading_spinner {
   background-color: rgba(255, 255, 255, 0.3);
   z-index: 10;
@@ -712,9 +1207,5 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
-}
-
-*:not(a) {
-  border: 1px solid pink;
 }
 /*# sourceMappingURL=main.css.map */

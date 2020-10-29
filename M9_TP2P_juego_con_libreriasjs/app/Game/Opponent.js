@@ -27,6 +27,9 @@ class Opponent extends Character {
     shoot() {
         if (!this.dead && !this.game.ended) {
             if (!this.game.paused) {
+                if(shoot_status){
+                    shoot_fx.play();  //Reproducir el efecto si esta activado
+                }
                 this.game.shoot(this);
             }
             setTimeout(() => this.shoot(), 1000 + getRandomNumber(2500));
@@ -64,6 +67,9 @@ class Opponent extends Character {
     /**
      * Mata al oponente
      */
+
+     //Agregado el sumatorio de puntos al matar enemigos
+
     die() {
         if (!this.dead) {
             setTimeout(() => {

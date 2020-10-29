@@ -9,12 +9,3 @@
 
 @import "partials/layout";
 @import "partials/modals";
-
-
-
-
-* {
-    &:not(a) {
-        border: 1px solid pink;
-    }
-}

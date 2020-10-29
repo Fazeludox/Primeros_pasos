@@ -21,6 +21,6 @@ h2 {
 }
 
 a {
-    text-decoration: underline;
-    color: rgb(0, 140, 255);
+    text-decoration: none;
+    color:  map-get($themes, color_1);
 }

@@ -15,7 +15,7 @@ $paragraph_margin_bottom: 1em;
 
 $dt_font_weight: bold;
 
-$link_color: #345c8d;
+$link_color: #ebebeb;
 $link_decoration: none;
 $link_hover_color: darken($link_color, 10%);
 $link_hover_decoration: none;
@@ -25,9 +25,9 @@ $text_muted: lighten($body_color, 15%);
 
 
 $themes: (
-    "color_1": #F162C1,
-    "color_2": #32F5D2,
-    "color_3": #30ECF8,
-    "gray": #586465,
-    "grayLight": #869FA0
+    "color_1": #7553A6,
+    "color_2": #A48ABF,
+    "color_3": #c58ab1,
+    "grayDarken": #626262,
+    "grayLight": #6C7372
 );

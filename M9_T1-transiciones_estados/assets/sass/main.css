@@ -1,0 +1,187 @@
+html, body {
+  width: 100%;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.contenedor {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  background-color: #323232;
+}
+
+.contenedor .formulario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contenedor .formulario label {
+  margin: 0.5em;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.contenedor .formulario input, .contenedor .formulario textarea {
+  margin: 0.5em;
+}
+
+.contenedor .formulario #nombre {
+  color: white;
+  padding: 8px 5px;
+  border-radius: 3px;
+  background-color: #797C7F;
+  border: 2px solid #F4F8FF;
+  -webkit-transition-property: color, background-color, border;
+  transition-property: color, background-color, border;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.contenedor .formulario #nombre:hover {
+  background-color: #ca7a89;
+  color: #0F0305;
+  -webkit-transition-property: color  background-color;
+  transition-property: color  background-color;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+
+.contenedor .formulario #nombre:focus {
+  border: 3px solid #A8203B;
+  -webkit-transition-property: border;
+  transition-property: border;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+
+.contenedor .formulario #mensaje {
+  color: #3D3E40;
+  padding: 8px 5px;
+  border-radius: 3px;
+  background-color: #F4F8FF;
+  border: 2px solid #3D3E40;
+  -webkit-transition-property: color, background-color, border;
+  transition-property: color, background-color, border;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.contenedor .formulario #mensaje:hover {
+  background-color: #797C7F;
+  color: #F4F8FF;
+  -webkit-transition-property: color  background-color;
+  transition-property: color  background-color;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+}
+
+.contenedor .formulario #mensaje:focus {
+  border: 3px solid #DBDFE5;
+  -webkit-transition-property: border;
+  transition-property: border;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+
+.contenedor .formulario #button {
+  padding: 0.5em;
+  color: #3D3E40;
+  border-radius: 5px;
+  border: 2px solid #CDE0F7;
+  background-color: #76A5DE;
+  -webkit-transition-property: border, background-color, color;
+  transition-property: border, background-color, color;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.contenedor .formulario #button:hover {
+  color: #32465E;
+  background-color: #CDE0F7;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.contenedor .formulario #button:focus {
+  border: 3px solid #5F6873;
+  -webkit-transition-property: border;
+  transition-property: border;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.contenedor .formulario #button:disabled {
+  color: #5F6873;
+  border: 2px solid #5F6873;
+  background-color: transparent;
+  -webkit-transition-property: border, background-color, color;
+  transition-property: border, background-color, color;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.contenedor .formulario #button:disabled:hover {
+  color: #5F6873;
+}
+/*# sourceMappingURL=main.css.map */

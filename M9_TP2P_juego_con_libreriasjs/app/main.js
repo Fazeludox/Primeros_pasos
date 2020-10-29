@@ -8,26 +8,26 @@ let game;
 
 
 // Valores constantes
-const OPPONENT_HEIGHT = 5,
+const OPPONENT_HEIGHT = 12,
     OPPONENT_PICTURE = "assets/img/malo.png",
     OPPONENT_PICTURE_DEAD = "assets/img/malo_muerto.png",
     OPPONENT_SPEED = 5,
-    OPPONENT_WIDTH = 5,
+    OPPONENT_WIDTH = 12,
     GAME_OVER_PICTURE = "assets/img/game_over.png",
     KEY_LEFT = "LEFT",
     KEY_RIGHT = "RIGHT",
     KEY_SHOOT = "SHOOT",
     MIN_TOUCHMOVE = 20,
-    PLAYER_HEIGHT = 5,
+    PLAYER_HEIGHT = 11,
     PLAYER_PICTURE = "assets/img/bueno.png",
     PLAYER_PICTURE_DEAD = "assets/img/bueno_muerto.png",
     PLAYER_SPEED = 20,
-    PLAYER_WIDTH = 5,
-    SHOT_HEIGHT = 1.5,
+    PLAYER_WIDTH = 11,
+    SHOT_HEIGHT = 5.5,
     SHOT_SPEED = 20,
     SHOT_PICTURE_PLAYER = "assets/img/shot1.png",
-    SHOT_PICTURE_OPPONENT = "assets/img/shot2.png",
-    SHOT_WIDTH = 1.5;
+    SHOT_PICTURE_OPPONENT = "assets/img/shot2.png";
+    SHOT_WIDTH = 4.5;
     
 
 
@@ -46,7 +46,8 @@ const GAME_UI = {
     modalWindows: {
         pause: document.querySelector('#modal_pause_window'),
         confirm: document.querySelector('#modal_confirm'),
-        spinner: document.querySelector('#modal_loading_spinner')
+        spinner: document.querySelector('#modal_loading_spinner'),
+        dead: document.querySelector("#modal_dead"), //Definicion del nuevo modal
     },
     state: {
         navigationStage: '',

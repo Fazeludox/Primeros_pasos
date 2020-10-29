@@ -225,7 +225,7 @@ class Game {
             gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_WINNER)
         }else{
          
-            let gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE)
+            gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE)
         }
         if(gameOver!==undefined){
             gameOver.render();

@@ -282,7 +282,7 @@ document.addEventListener("click", (ev) => {
 function registerSW() {
     if ("serviceWorker" in navigator) {
         try {
-            navigator.serviceWorker.register("./service-worker.js").then((reg) => {
+            navigator.serviceWorker.register("/Primeros_pasos/M10-T3_desarrollo_pwa/public/service-worker.js").then((reg) => {
                 console.log("Service worker registered.", reg);
 
             })

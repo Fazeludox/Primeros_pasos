@@ -29,8 +29,8 @@
             "type": "image/png"
         }
     ],
-    "scope": "/",
-    "start_url": "/index.html",
+    
+    "start_url": "/Primeros_pasos/M10-T3_desarrollo_pwa/public/index.html",
     "display":"standalone",
     "background_color":"#323232",
     "theme_color":"#fff"

@@ -6,17 +6,18 @@ const CACHE_NAME = 'mangas-v1';
 // CODELAB: Add list of files to cache here.
 
 const FILES_TO_CACHE = [
-    '/index.html',
-    '/offline.html',
-    '/ajax.js',
-    '/assets/js/install.js',
-    '/assets/img/orilla.jpg',
-    '/assets/img/placeholder.png',
-    '/assets/img/overlord.jpg',
-    '/assets/img/slime.jpg',
-    '/assets/img/kuroko.png',
-    '/assets/img/silent.png',
-    '/assets/styles/estilos.css',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/index.html',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/offline.html',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/ajax.js',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/js/install.js',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/orilla.jpg',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/placeholder.png',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/overlord.jpg',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/slime.jpg',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/kuroko.png',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/img/silent.png',
+    '/Primeros_pasos/M10-T3_desarrollo_pwa/public/assets/styles/estilos.css',
 ];
 
 

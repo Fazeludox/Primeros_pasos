@@ -1,0 +1,128 @@
+body {
+  --primary: #BF5145;
+  --secondary: #7F362E;
+  margin: 0px;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+button {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: none;
+  margin: 2px;
+  color: var(--primary);
+  background: white;
+  border: 1px solid var(--primary);
+  height: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: ease-in 0.2s all;
+  padding: 0 8px 0 8px;
+}
+div#main {
+  padding: 10px;
+}
+input {
+  margin-bottom: 5px;
+  margin-top: 2px;
+  padding: 4px;
+  font-size: 13px;
+}
+h1 {
+  background: var(--primary);
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0px;
+  padding: 15px;
+}
+h2 {
+  margin-block-start: 0px;
+  margin-block-end: 10px;
+  font-size: 20px;
+  color: var(--primary);
+}
+button:hover {
+  background: var(--secondary);
+  color: white;
+}
+div.actions {
+  margin-top: 10px;
+}
+div.movie {
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+  box-shadow: 2px 2px 7px #ccc;
+  margin: 5px;
+}
+div.movie div.movie-img {
+  width: 200px;
+  height: auto;
+  min-height: 200px;
+  cursor: pointer;
+}
+div.movie div.movie-img img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--secondary);
+}
+div.movie div.title {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  white-space: nowrap;
+}
+div.field {
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+.datos_peliculas{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.datos_peliculas h1{
+  margin-top: 5px;
+}
+
+.datos_peliculas img{
+ box-shadow: 0px 0px 7px black;
+}
+
+.miniatura_sinopsis {
+  margin: 10px;
+  width: 230px;
+  height: 315px;
+  border: 2px solid var(--secondary);
+  align-self: center;
+}
+
+hr{
+  margin: 5px;
+  color: #FF6C5C;
+}
+
+
+.datos_peliculas p{
+  width: 395px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#autor_manga{
+  margin:2px;
+  padding: 2px;
+  font-size: 13px;
+  text-align: right;
+}

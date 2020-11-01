@@ -1,11 +1,13 @@
 {
     "name": "Shoot Them",
     "short_name": "Shoot",
+    "description": "A Simply game similar a space invaders.",
     "start_url":"/Primeros_pasos/M10-TP2P-pwa_shooter_game/index.html",
     "display":"standalone",
     "orientation":"portrait",
     "theme_color":"#7553A6",
     "background_color":"#fff",
+    "lang":"en-US",
     "icons": [
         {
             "src": "assets/img/icons/icon144x144.png",

@@ -12,7 +12,7 @@ console.log("1");
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 function saveBeforeInstallPromptEvent(ev){
-    e.preventDefault();
+    ev.preventDefault();
     console.log(ev);
     deferredInstallPrompt = ev;
     installPWA.style.setProperty('visibility', 'visible');

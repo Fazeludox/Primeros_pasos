@@ -1,34 +1,38 @@
 'use strict'
 
-let defferedInstallPrompt = null;
+let deferredInstallPrompt = null;
 
 const installPWA = document.getElementById('installPWA');
+installPWA.style.setProperty('visibility', "hidden");
+
 installPWA.addEventListener('click', installApp);
-installPWA.style.setProperty('visibility', 'hidden');
 console.log("1");
 
+// CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 function saveBeforeInstallPromptEvent(ev){
-    defferedInstallPrompt = ev;
+    console.log(ev);
+    deferredInstallPrompt = ev;
     installPWA.style.setProperty('visibility', 'visible');
-    console.log("1");
+    console.log(deferredInstallPrompt);
 }
 
-function installApp(ev){
-    defferedInstallPrompt.prompt();
-    console.log("13");
-    installPWA.style.setProperty('visibility', 'hidden');
-
-    defferedInstallPrompt.userChoice.then((choice)=>{
-        if(choice.outcoume === 'accepted'){
-            console.log("User accept the A2HS prompt", choice);
-        }else{
-            console.log("User dimissed the A2HS prompt", choice);
-        }
-        defferedInstallPrompt = null;
-    });
-}
+function installApp(ev) {
+    // CODELAB: Add code show install prompt & hide the install button.
+    deferredInstallPrompt.prompt();
+    // Hide the install button, it can't be called twice.
+    installButton.style.setProperty('display', "none");
+    // CODELAB: Log user response to prompt.
+    deferredInstallPrompt.userChoice.then((choice) => {
+          if (choice.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt', choice);
+          } else {
+            console.log('User dismissed the A2HS prompt', choice);
+          }
+          deferredInstallPrompt = null;
+        });
+  }
 
 window.addEventListener('appinstalled', congrats);
 

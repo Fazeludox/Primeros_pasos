@@ -23,7 +23,7 @@ function installApp(ev) {
     // CODELAB: Add code show install prompt & hide the install button.
     deferredInstallPrompt.prompt();
     // Hide the install button, it can't be called twice.
-    installButton.style.setProperty('display', "none");
+    installPWA.style.setProperty('display', "none");
     // CODELAB: Log user response to prompt.
     deferredInstallPrompt.userChoice.then((choice) => {
           if (choice.outcome === 'accepted') {

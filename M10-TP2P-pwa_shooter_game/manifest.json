@@ -1,0 +1,30 @@
+{
+    "name": "Shoot Them",
+    "short_name": "Shoot",
+    "start_url":"/Primeros_pasos/M10-TP2P-pwa_shooter_game/index.html",
+    "display":"standalone",
+    "orientation":"portrait",
+    "theme_color":"#7553A6",
+    "background_color":"#fff",
+    "icons": [
+        {
+            "src": "/assets/img/icons/icon144x144.png",
+            "type":"image/png",
+            "sizes":"144x144",
+            "purpose":"any maskable"
+        },
+        {
+            "src": "/assets/img/icons/icon192x192.png",
+            "type":"image/png",
+            "sizes":"192x192",
+            "purpose":"maskable"
+        },
+        {
+            "src": "/assets/img/icons/icon512x512.png",
+            "type":"image/png",
+            "sizes":"512x512",
+            "purpose":"maskable"
+        }
+    ]
+
+}

@@ -4,19 +4,21 @@ let defferedInstallPrompt = null;
 
 const installPWA = document.getElementById('installPWA');
 installPWA.addEventListener('click', installApp);
-installPWA.style.setProperty('visibility', 'hidden')
+installPWA.style.setProperty('visibility', 'hidden');
+console.log("1");
 
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 function saveBeforeInstallPromptEvent(ev){
     defferedInstallPrompt = ev;
-    installPWA.style.setProperty('visibility', 'visible')
+    installPWA.style.setProperty('visibility', 'visible');
+    console.log("1");
 }
 
 function installApp(ev){
     defferedInstallPrompt.prompt();
-
-    installPWA.style.setProperty('visibility', 'hidden')
+    console.log("13");
+    installPWA.style.setProperty('visibility', 'hidden');
 
     defferedInstallPrompt.userChoice.then((choice)=>{
         if(choice.outcoume === 'accepted'){

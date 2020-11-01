@@ -10,13 +10,13 @@ window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 function saveBeforeInstallPromptEvent(ev){
     defferedInstallPrompt = ev;
-    installPWA.style.setProperty('visibility', 'visible')
+    installPWA.style.setProperty('visibility', 'visible');
 }
 
 function installApp(ev){
     defferedInstallPrompt.prompt();
 
-    installPWA.style.setProperty('visibility', 'hidden')
+    installPWA.style.setProperty('visibility', 'hidden');
 
     defferedInstallPrompt.userChoice.then((choice)=>{
         if(choice.outcoume === 'accepted'){

@@ -25,7 +25,7 @@ let shoot_status = false;
 
 let serviceWorker = () => {
     if ('serviceWorker' in navigator){
-        navigator.serviceWorker.register("../sw.js").then( (reg)=>{            
+        navigator.serviceWorker.register("/sw.js").then( (reg)=>{            
             console.log("[Service Worker] Registration succeded.");
         }).catch((e)=>{
             console.log("[Service Worker] Registration failed.")

@@ -4,7 +4,7 @@ let defferedInstallPrompt = null;
 
 const installPWA = document.getElementById('installPWA');
 installPWA.addEventListener('click', installApp);
-installPWA.style.setProperty('visibility', 'hidden')
+installPWA.style.setProperty('visibility', 'hidden');
 
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 

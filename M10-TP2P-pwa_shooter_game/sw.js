@@ -3,6 +3,7 @@
 const CACHE_NAME = "shoot-v1";
 
 const FILES_TO_CACHE = [
+    "/Primeros_pasos/M10-TP2P-pwa_shooter_game/",
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/index.html",
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/offline.html",
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/app/Animations.js",
@@ -54,7 +55,7 @@ const FILES_TO_CACHE = [
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/assets/img/shot1.png",
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/assets/img/shot2.png",
     "/Primeros_pasos/M10-TP2P-pwa_shooter_game/assets/img/you_win.png"
-]
+];
 
 
 self.addEventListener('install',  (evt) => {
